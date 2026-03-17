@@ -775,7 +775,13 @@
     "reg_verify_text": "I verify all my details are correct and ready for elite matching.",
     "reg_next_step": "Next Step",
     "reg_complete": "Complete Registration",
-    "reg_back": "BACK"
+    "reg_back": "BACK",
+    "media_news_1_title": "Mega Job Fair Highlights 2024",
+    "media_news_1_desc": "Catch the highlights from our most successful job fair yet, connecting thousands of candidates with top employers.",
+    "media_news_2_title": "New Government Tech Schemes",
+    "media_news_2_desc": "Stay updated with the latest government initiatives designed to boost technical employment across the nation.",
+    "media_news_3_title": "Success Story: ITI to Industry Leader",
+    "media_news_3_desc": "Read about Rahul's inspiring journey from a vocational student to a lead engineer at a top tech firm."
   },
   "hi": {
     "bento_title": "कैटेगरी अनुसार ब्राउज़ करें",
@@ -1549,6 +1555,12 @@
     "reg_complete": "पंजीकरण पूरा करें",
     "reg_back": "पीछे",
     "bento_title_part1": "श्रेणी के अनुसार",
-    "bento_title_part2": "ब्राउज़ करें"
+    "bento_title_part2": "ब्राउज़ करें",
+    "media_news_1_title": "मेगा जॉब फेयर हाइलाइट्स 2024",
+    "media_news_1_desc": "हमारे अब तक के सबसे सफल जॉब फेयर की झलकियाँ देखें, जिसने हज़ारों उम्मीदवारों को शीर्ष नियोक्ताओं से जोड़ा।",
+    "media_news_2_title": "नई सरकारी तकनीकी योजनाएं",
+    "media_news_2_desc": "राष्ट्र भर में तकनीकी रोजगार को बढ़ावा देने के लिए डिज़ाइन की गई नवीनतम सरकारी पहलों के साथ अपडेट रहें।",
+    "media_news_3_title": "सफलता की कहानी: ITI से इंडस्ट्री लीडर तक",
+    "media_news_3_desc": "राहुल की प्रेरक यात्रा के बारे में पढ़ें, जो एक व्यावसायिक छात्र से एक शीर्ष टेक फर्म में लीड इंजीनियर बने।"
   }
 }

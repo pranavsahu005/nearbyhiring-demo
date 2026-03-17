@@ -29,6 +29,7 @@ import AiResumeBuilder from "./pages/AiResumeBuilder";
 import AiMockInterview from "./pages/AiMockInterview";
 import AiCoverLetter from "./pages/AiCoverLetter";
 import Support from "./pages/Support";
+import Disclosure from "./pages/Disclosure";
 import NotFound from "./pages/NotFound";
 import SmoothScroll from "./components/SmoothScroll";
 import ScrollToTop from "./components/ScrollToTop";
@@ -74,6 +75,7 @@ const App = () => {
                 <Route path="/ai-mock-interview" element={<AiMockInterview />} />
                 <Route path="/ai-cover-letter" element={<AiCoverLetter />} />
                 <Route path="/support" element={<Support />} />
+                <Route path="/disclosure" element={<Disclosure />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </SmoothScroll>

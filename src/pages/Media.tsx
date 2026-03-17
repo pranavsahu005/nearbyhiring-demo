@@ -1,4 +1,4 @@
-
+﻿
 import React from "react";
 import { Play, Image as ImageIcon, Newspaper, Mic2, ArrowRight, Share2, Download, ExternalLink, PlayCircle } from "lucide-react";
 import MainLayout from "@/components/MainLayout";
@@ -60,22 +60,22 @@ const Media = () => {
   useScrollReveal();
   const mediaItems: MediaItem[] = [
     {
-      title: t("media_news_1_title") || "Latest Job Fair Highlights 2024",
-      description: t("media_news_1_desc") || "नवीनतम जॉब मेलों व कैंपस ड्राइव्स की जानकारी।",
+      title: t("media_news_1_title"),
+      description: t("media_news_1_desc"),
       type: "video",
-      image: "/assets/img/features/media.png"
+      image: "/assets/img/features/media_job_fair.png"
     },
     {
-      title: t("media_news_2_title") || "Government Employment Schemes",
-      description: t("media_news_2_desc") || "सरकारी योजनाओं और रोजगार योजनाओं पर अपडेट।",
+      title: t("media_news_2_title"),
+      description: t("media_news_2_desc"),
       type: "article",
-      image: "/assets/img/features/media.png"
+      image: "/assets/img/features/media_govt_schemes.png"
     },
     {
-      title: t("media_news_3_title") || "Success Stories: ITI Graduates",
-      description: t("media_news_3_desc") || "सफल उम्मीदवारों की प्रेरक कहानियाँ।",
+      title: t("media_news_3_title"),
+      description: t("media_news_3_desc"),
       type: "image",
-      image: "/assets/img/features/media.png"
+      image: "/assets/img/features/media_success_stories.png"
     }
   ];
 
@@ -135,3 +135,4 @@ const Media = () => {
 };
 
 export default Media;
+

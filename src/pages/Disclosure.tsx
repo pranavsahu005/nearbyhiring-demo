@@ -71,7 +71,7 @@ const Disclosure = () => {
                   <h2 className="text-3xl font-black text-slate-900 italic uppercase tracking-tight">3. Supplementary Notes</h2>
                 </div>
                 <div className="space-y-6">
-                  <div className="flex items-start gap-6 p-8 bg-purple-600 rounded-3xl text-white shadow-lg">
+                  <div className="flex items-start gap-6 p-8 bg-blue-600 rounded-3xl text-white shadow-lg">
                     <Briefcase className="h-10 w-10 mt-1 flex-shrink-0" />
                     <div>
                       <p className="text-2xl font-black uppercase italic italic tracking-tight mb-2">No Placement Promises</p>
@@ -89,7 +89,7 @@ const Disclosure = () => {
               </section>
 
               <section className="bg-blue-premium p-12 rounded-[4rem] shadow-2xl text-center text-white relative overflow-hidden" data-reveal>
-                <h2 className="text-3xl font-black uppercase italic tracking-tight mb-6">Concerns?</h2>
+                <h2 className="text-3xl font-black uppercase italic tracking-tight mb-6 text-blue-200">Concerns?</h2>
                 <p className="text-xl font-bold mb-10 opacity-70">If you have any inquiries regarding our policy, kindly reach out to us.</p>
                 <a 
                   href="mailto:info@eduskill.org" 
