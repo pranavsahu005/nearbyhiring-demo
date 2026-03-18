@@ -18,11 +18,12 @@ const Terms = () => {
       <div className="py-16 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-10 text-center">
-              <h1 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 mb-3">
-                Terms and <span className="text-blue-600">Conditions</span>
+            <div className="mb-12 text-center" data-reveal>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 uppercase tracking-tighter italic leading-none text-slate-900">
+                Terms and{" "}
+                <span className="text-blue-600">Conditions</span>
               </h1>
-              <p className="text-slate-500 font-medium text-sm">Last updated: July 01, 2025</p>
+              <p className="text-slate-500 font-bold italic uppercase tracking-widest text-sm">Last updated: July 01, 2025</p>
             </div>
 
             <div className="space-y-8">
@@ -33,7 +34,7 @@ const Terms = () => {
                   </div>
                   <h2 className="text-xl font-bold text-slate-900">Welcome</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed text-sm space-y-3">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed text-sm space-y-3 font-normal italic">
                   <p>
                     <strong>Greetings and welcome to the Eduskill Employment Division (Eduskill Group) website.</strong>
                   </p>
@@ -50,7 +51,7 @@ const Terms = () => {
                   </div>
                   <h2 className="text-xl font-bold text-slate-900">Disclaimers</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed text-sm space-y-3">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed text-sm space-y-3 font-normal italic">
                   <p>
                     Eduskill Employment Division (Eduskill Group) and its employees absolve themselves of all responsibility, financial loss, or any danger resulting from the utilization and execution of the information presented on this website. Eduskill Employment Division (Eduskill Group) offers this website as a resource for anyone seeking information on training, employment, and career management related to Eduskill Employment Division (Eduskill Group) principles and approaches.
                   </p>
@@ -70,7 +71,7 @@ const Terms = () => {
                   </div>
                   <h2 className="text-xl font-bold text-slate-900">Copyrights & Trademarks</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed text-sm space-y-3">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed text-sm space-y-3 font-normal italic">
                   <p>
                     The content on this site, including text, graphics, logos, button icons, photos, and software, is owned by Eduskill Employment Division (Eduskill Group) and is safeguarded by copyright laws in India and elsewhere.
                   </p>
@@ -87,7 +88,7 @@ const Terms = () => {
                   </div>
                   <h2 className="text-xl font-bold text-slate-900">Use of Website Contents</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed text-sm space-y-3">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed text-sm space-y-3 font-normal italic">
                   <p>The use of website content is permitted under the following conditions:</p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>The copyright notice must be included in all copies, along with this permission notice.</li>
@@ -104,7 +105,7 @@ const Terms = () => {
                   </div>
                   <h2 className="text-xl font-bold text-slate-900">Data Protection</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed text-sm space-y-3">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed text-sm space-y-3 font-normal italic">
                   <p>
                     Data protection refers to the measures and practices implemented to safeguard sensitive information against unauthorized access, use, or disclosure. The personal information submitted to Eduskill Employment Division (Eduskill Group) via this website will be utilized only in compliance with our Privacy Policy. Kindly peruse this document attentively prior to proceeding with your exploration of our website. By disclosing your personal information to us, you are giving your consent for its utilization in compliance with our Privacy policy.
                   </p>
@@ -118,7 +119,7 @@ const Terms = () => {
                   </div>
                   <h2 className="text-xl font-bold text-slate-900">Third-party Websites</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed text-sm space-y-3">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed text-sm space-y-3 font-normal italic">
                   <p>
                     The hyperlinks on this website will redirect you away from the Eduskill Employment Division (Eduskill Group)'s website. Eduskill Employment Division (Eduskill Group) or Eduskill Group does not have authority over the connected sites, and therefore, Eduskill Employment Division (Eduskill Group) or Eduskill Group and its allied companies cannot be held responsible for the content of any linked site, any link within a linked site, or any modifications or updates made to such sites.
                   </p>
@@ -135,7 +136,7 @@ const Terms = () => {
                   </div>
                   <h2 className="text-xl font-bold text-slate-900">Jurisdiction</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed text-sm space-y-3">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed text-sm space-y-3 font-normal italic">
                   <p>
                     Jurisdiction refers to the legal authority or power that a court or other legal body has to hear and decide a case. The terms and conditions of this agreement are subject to Indian law and any disputes related to these terms or the website, whether contractual or otherwise, will be resolved in Indian courts.
                   </p>

@@ -100,13 +100,13 @@ const Jobs = () => {
             <span className="inline-block py-2 px-4 rounded-full bg-blue-50 text-blue-600 font-black text-[10px] uppercase tracking-[0.3em] mb-4">
               {t("nav_latest_openings")}
             </span>
-            <h1 className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter italic leading-none">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 uppercase tracking-tighter italic leading-none">
               {t("jobs_local_jobs").split(' ')[0]} <span className="text-blue-600">{t("jobs_local_jobs").split(' ')[1]}</span>
             </h1>
           </div>
 
           {/* Premium Search Bar (Glassmorphism) */}
-          <div className="mb-16 p-3 bg-white/40 backdrop-blur-3xl rounded-[2.5rem] border border-white/60 shadow-[0_32px_64px_-16px_rgba(37,99,235,0.1)] flex flex-col md:flex-row gap-3" data-reveal>
+          <div className="mb-16 p-3 bg-white/40 backdrop-blur-3xl rounded-3xl border border-white/60 shadow-[0_32px_64px_-16px_rgba(37,99,235,0.1)] flex flex-col md:flex-row gap-3" data-reveal>
             <div className="relative flex-1 group">
               <Search className="absolute left-6 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400 group-focus-within:text-blue-600 transition-colors" />
               <input 
@@ -131,7 +131,7 @@ const Jobs = () => {
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Filter Sidebar (Premium Glassmorphism) */}
             <aside className="w-full lg:w-80 flex-shrink-0" data-reveal>
-              <div className="bg-white/60 backdrop-blur-2xl rounded-[3rem] p-10 border border-white/80 shadow-[0_20px_50px_rgba(0,0,0,0.02)] sticky top-24">
+              <div className="bg-white/60 backdrop-blur-2xl rounded-3xl p-10 border border-white/80 shadow-[0_20px_50px_rgba(0,0,0,0.02)] sticky top-24">
                 <div className="flex items-center gap-4 mb-10 pb-6 border-b border-slate-100">
                   <div className="h-10 w-10 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-100">
                     <Filter className="h-5 w-5" />
@@ -195,7 +195,7 @@ const Jobs = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: i * 0.05 }}
                         key={i} 
-                        className="group bg-white rounded-[3rem] p-10 border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:-translate-y-3 transition-all duration-700 relative overflow-hidden" 
+                        className="group bg-white rounded-3xl p-10 border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:-translate-y-3 transition-all duration-700 relative overflow-hidden" 
                       >
                         <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-50 transition-colors duration-700" />
                         

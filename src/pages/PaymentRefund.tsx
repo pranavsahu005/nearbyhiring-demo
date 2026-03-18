@@ -22,8 +22,9 @@ const PaymentRefund = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="mb-12 text-center" data-reveal>
-              <h1 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 mb-4 italic uppercase">
-                Payment Terms, Cancellation <br className="hidden md:block" />& <span className="text-blue-600">Refund Policy</span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 uppercase tracking-tighter italic leading-none text-slate-900">
+                Payment Terms, Cancellation{" "}
+                <br className="hidden md:block" />& <span className="text-blue-600">Refund Policy</span>
               </h1>
               <p className="text-slate-500 font-bold italic uppercase tracking-widest text-sm">Eduskill Employment Division (Eduskill Technologies Private Limited)</p>
               <p className="text-slate-400 font-black italic tracking-widest uppercase text-xs mt-2">Version: July 01, 2025</p>
@@ -31,14 +32,14 @@ const PaymentRefund = () => {
 
             <div className="grid gap-8">
               {/* Payment Agreement */}
-              <section className="bg-white p-8 md:p-12 rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-6 mb-8">
                   <div className="p-4 bg-blue-50 rounded-2xl text-blue-600 shadow-sm">
                     <CreditCard className="h-8 w-8" />
                   </div>
                   <h2 className="text-2xl font-black text-slate-900 italic uppercase tracking-tight">Payment Agreement</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed font-bold italic text-sm space-y-4">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed font-normal italic text-sm space-y-4">
                   <p>
                     By enrolling in any physical / hybrid / online and / or blended training course or purchasing any of our Services and providing Eduskill Employment Division (Eduskill Group) with your payment information, you hereby agree to these payment terms. To purchase any services or products offered through the Services, you must have Internet access and a current valid accepted payment method as indicated during sign-up process ("Payment Method").
                   </p>
@@ -52,7 +53,7 @@ const PaymentRefund = () => {
               </section>
 
               {/* Subscription Types */}
-              <section className="bg-white p-8 md:p-12 rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-6 mb-8">
                   <div className="p-4 bg-indigo-50 rounded-2xl text-indigo-600 shadow-sm">
                     <RefreshCcw className="h-8 w-8" />
@@ -88,14 +89,14 @@ const PaymentRefund = () => {
               </section>
 
               {/* Personal Information */}
-              <section className="bg-white p-8 md:p-12 rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-6 mb-8">
                   <div className="p-4 bg-amber-50 rounded-2xl text-amber-600 shadow-sm">
                     <UserCheck className="h-8 w-8" />
                   </div>
                   <h2 className="text-2xl font-black text-slate-900 italic uppercase tracking-tight">Personal Information Collected</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed font-bold italic text-sm">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed font-normal italic text-sm">
                   <p>
                     Eduskill Employment Division collects information in several ways. When you register for a course, we may ask for contact information such as your name, address, telephone number and e-mail address, and for billing information. We may also ask you to complete certain forms or surveys that gather information about you, your academic background, business, profession, job and your opinions or comments. Correspondence sent to us by you or by third parties about your activities may be collected into a file specific to you.
                   </p>
@@ -103,7 +104,7 @@ const PaymentRefund = () => {
               </section>
 
               {/* Cancellation & Refund */}
-              <section className="bg-white p-8 md:p-12 rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-6 mb-8">
                   <div className="p-4 bg-red-50 rounded-2xl text-red-600 shadow-sm">
                     <Ban className="h-8 w-8" />
@@ -145,7 +146,7 @@ const PaymentRefund = () => {
               </section>
 
               {/* Binding Clauses */}
-              <section className="bg-white p-8 md:p-12 rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-6 mb-8">
                   <div className="p-4 bg-red-50 rounded-2xl text-red-600 shadow-sm">
                     <AlertCircle className="h-8 w-8" />
@@ -166,7 +167,7 @@ const PaymentRefund = () => {
                   ))}
                 </div>
 
-                <div className="space-y-4 text-sm text-slate-600 font-bold italic leading-relaxed">
+                <div className="space-y-4 text-sm text-slate-600 font-normal italic leading-relaxed">
                   <p>
                     <strong>Refunds:</strong> Other than stated above, Eduskill Employment Division will not offer refunds on any fees and charges. This includes any partially used or unused periods. We do not guarantee refunds for lack of usage or dissatisfaction. Upon termination of your subscription, you will not be charged for future monthly fees but will not be issued a refund for previously charged fees.
                   </p>

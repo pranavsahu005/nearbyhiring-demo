@@ -14,7 +14,7 @@ interface MediaItem {
 }
 
 const MediaCard = ({ item }: { item: MediaItem }) => (
-  <div className="group bg-white rounded-[3rem] overflow-hidden border border-slate-100 hover:shadow-2xl hover:shadow-blue-100 transition-all duration-700">
+  <div className="group bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:shadow-blue-100 transition-all duration-700">
     <div className="relative aspect-video overflow-hidden">
       <img 
         src={item.image} 
@@ -40,11 +40,11 @@ const MediaCard = ({ item }: { item: MediaItem }) => (
         {item.type}
       </div>
     </div>
-    <div className="p-10">
-      <h3 className="text-2xl font-black text-slate-900 mb-4 group-hover:text-blue-600 transition-colors tracking-tight">
+    <div className="p-8 md:p-10">
+      <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-4 group-hover:text-blue-600 transition-colors tracking-tight italic uppercase">
         {item.title}
       </h3>
-      <p className="text-slate-500 font-medium leading-relaxed mb-8">
+      <p className="text-slate-500 font-normal italic leading-relaxed mb-8 text-sm max-w-3xl">
         {item.description}
       </p>
       <button className="flex items-center gap-2 text-blue-600 font-black uppercase text-sm tracking-wider hover:gap-4 transition-all">
@@ -97,7 +97,7 @@ const Media = () => {
                 <Mic2 className="h-3 w-3" />
                 Press & Media
               </div>
-              <h2 className="text-2xl md:text-4xl font-black tracking-tight text-slate-900 mb-4 italic uppercase text-center leading-[1.1]">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 mb-6 italic uppercase text-center leading-[1.1]">
                 Latest <span className="text-blue-600">Industry Updates</span>
               </h2>
             </div>
@@ -108,7 +108,7 @@ const Media = () => {
               ))}
             </div>
 
-            <div className="bg-blue-600 rounded-[3rem] p-10 md:p-16 relative overflow-hidden group">
+            <div className="bg-blue-600 rounded-3xl p-8 md:p-12 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 transition-transform duration-1000 group-hover:scale-110" />
               
               <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">

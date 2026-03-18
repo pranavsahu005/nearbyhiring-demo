@@ -21,8 +21,9 @@ const Disclosure = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="mb-16 text-center" data-reveal>
-              <h1 className="text-4xl md:text-6xl font-black tracking-tight text-slate-900 mb-6 italic uppercase">
-                Disclosure <span className="text-blue-600">Statement</span>
+              <h1 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 mb-6 italic uppercase">
+                Disclosure{" "}
+                <span className="text-blue-600">Statement</span>
               </h1>
               <div className="inline-flex flex-col items-center">
                 <p className="text-slate-500 font-black italic uppercase tracking-[0.2em] text-sm">Eduskill Employment Division (Eduskill Group)</p>
@@ -33,7 +34,7 @@ const Disclosure = () => {
 
             <div className="space-y-16">
               {/* 1. Overview */}
-              <section className="bg-white p-10 md:p-16 rounded-[4rem] shadow-2xl shadow-blue-900/5 border border-slate-100 relative overflow-hidden" data-reveal>
+              <section className="bg-white p-10 md:p-16 rounded-3xl md:rounded-[2.5rem] shadow-2xl shadow-blue-900/5 border border-slate-100 relative overflow-hidden" data-reveal>
                 <div className="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none">
                   <Info size={120} />
                 </div>
@@ -102,7 +103,7 @@ const Disclosure = () => {
                     ))}
                   </div>
 
-                  <div className="mt-12 p-10 bg-blue-900 rounded-[3rem] text-white">
+                  <div className="mt-12 p-10 bg-blue-900 rounded-3xl text-white">
                     <h4 className="text-xl font-black uppercase italic tracking-tight mb-6 text-blue-300">Disclosure of Information</h4>
                     <p className="text-blue-100/80 font-bold mb-8 italic">Your personal information will only be shared with third parties if you give us your consent, unless the following circumstances arise:</p>
                     <ul className="space-y-4">
@@ -141,7 +142,7 @@ const Disclosure = () => {
                   </ul>
                 </section>
 
-                <section className="bg-slate-900 p-10 rounded-[3rem] shadow-xl text-white" data-reveal>
+                <section className="bg-slate-900 p-10 rounded-3xl shadow-xl text-white" data-reveal>
                   <h3 className="text-2xl font-black italic uppercase tracking-tight mb-8 text-blue-400">5. Data Protection</h3>
                   <p className="text-blue-100/70 font-bold leading-relaxed text-sm italic">
                     We implement measures to safeguard your information against unauthorized access, utilization, disclosure, modification, or eradication. 
@@ -179,13 +180,13 @@ const Disclosure = () => {
 
               {/* Footer Policies */}
               <div className="grid md:grid-cols-2 gap-8 italic">
-                <div className="p-10 bg-blue-50 rounded-[3rem] border border-blue-100">
+                <div className="p-10 bg-blue-50 rounded-3xl border border-blue-100">
                   <h4 className="font-black text-blue-900 uppercase tracking-widest text-xs mb-4">6. Policy Modifications</h4>
                   <p className="text-[13px] font-bold text-blue-700/70">
                     Periodically, we may revise this policy. The most recent version was revised on July 01, 2025.
                   </p>
                 </div>
-                <div className="p-10 bg-slate-900 rounded-[3rem] text-white flex flex-col justify-center items-center text-center">
+                <div className="p-10 bg-slate-900 rounded-3xl text-white flex flex-col justify-center items-center text-center">
                   <h4 className="font-black uppercase tracking-widest text-xs mb-4 text-blue-400">8. Get In Touch</h4>
                   <p className="text-[13px] font-bold opacity-70 mb-6">If you have any inquiries regarding our policy, kindly reach out.</p>
                   <a href="mailto:info@eduskill.org" className="text-lg font-black italic hover:text-blue-400 transition-colors">info@eduskill.org</a>
@@ -193,7 +194,7 @@ const Disclosure = () => {
               </div>
 
               {/* CTA */}
-              <section className="bg-gradient-to-br from-blue-600 to-indigo-800 p-12 md:p-20 rounded-[4rem] shadow-2xl text-center text-white relative overflow-hidden" data-reveal>
+              <section className="bg-gradient-to-br from-blue-600 to-indigo-800 p-12 md:p-20 rounded-3xl md:rounded-[2.5rem] shadow-2xl text-center text-white relative overflow-hidden" data-reveal>
                 <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
                   <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
                   <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-400 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />

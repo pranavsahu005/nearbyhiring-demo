@@ -12,31 +12,31 @@ const Employability = () => {
       title: t("emp_feat_1_title"),
       desc: t("emp_feat_1_desc"),
       icon: BrainCircuit,
-      image: "/assets/img/features/data_sci.png"
+      image: "/assets/img/services1.png"
     },
     {
       title: t("emp_feat_2_title"),
       desc: t("emp_feat_2_desc"),
       icon: GraduationCap,
-      image: "/assets/img/features/edu.png"
+      image: "/assets/img/options.png"
     },
     {
         title: t("emp_feat_3_title"),
         desc: t("emp_feat_3_desc"),
         icon: Sparkles,
-        image: "/assets/img/features/media.png"
+        image: "/assets/img/skilling.png"
     },
     {
         title: t("emp_feat_4_title"),
         desc: t("emp_feat_4_desc"),
         icon: Database,
-        image: "/assets/img/features/retail.png"
+        image: "/assets/img/dataInfuse.png"
     },
     {
         title: t("emp_feat_5_title"),
         desc: t("emp_feat_5_desc"),
         icon: Rocket,
-        image: "/assets/img/features/media_govt_schemes.png"
+        image: "/assets/img/sustainability.png"
     }
   ];
 
@@ -63,13 +63,13 @@ const Employability = () => {
                 </p>
             </div>
 
-            <div className="space-y-16 md:space-y-24">
+            <div className="space-y-24 md:space-y-40">
                 {features.map((f, i) => (
                     <div key={i} className={`flex flex-col md:flex-row items-center gap-12 ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                         <div className="flex-1" data-reveal>
                             <div className="relative group">
-                                <div className="absolute -inset-4 bg-blue-600/5 rounded-[1.5rem] md:rounded-[3rem] blur-2xl group-hover:bg-blue-600/10 transition-all duration-700" />
-                                <div className="relative z-10 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-xl border-4 border-white group-hover:border-blue-50 transition-all duration-700">
+                                <div className="absolute -inset-4 bg-blue-600/5 rounded-2xl md:rounded-3xl blur-2xl group-hover:bg-blue-600/10 transition-all duration-700" />
+                                <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-3xl shadow-xl border-4 border-white group-hover:border-blue-50 transition-all duration-700">
                                     <img 
                                         src={f.image} 
                                         alt={f.title} 
@@ -88,8 +88,10 @@ const Employability = () => {
                                 <span className="h-1 w-8 bg-blue-600 rounded-full" />
                                 MODULE {i + 1}
                             </div>
-                             <h3 className="text-lg md:text-2xl font-black text-slate-900 uppercase italic tracking-tighter leading-tight">
-                                {f.title}
+                             <h3 className="text-lg md:text-2xl font-black text-slate-900 uppercase italic tracking-tight leading-tight">
+                                {f.title?.split(' ').map((word, idx) => (
+                                    <span key={idx} className={idx > 0 ? "ml-2" : ""}>{word}</span>
+                                ))}
                             </h3>
                             <p className="text-slate-600 text-[13px] md:text-sm font-normal leading-relaxed italic opacity-80">
                                 {f.desc}
@@ -104,13 +106,13 @@ const Employability = () => {
                     </div>
                 ))}
 
-                <div className="relative py-12 px-6 md:py-16 md:px-20 bg-slate-900 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl" data-reveal>
+                <div className="relative py-12 px-6 md:py-16 md:px-20 bg-slate-900 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl" data-reveal>
                     <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
                     <div className="relative z-10 text-center">
                         <div className="h-16 w-16 bg-blue-600/20 backdrop-blur-2xl rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10 shadow-2xl">
                             <Database className="h-8 w-8 text-blue-400" />
                         </div>
-                        <h3 className="text-base md:text-2xl font-black text-white mb-4 uppercase italic tracking-tighter leading-none">
+                        <h3 className="text-base md:text-2xl font-black text-white mb-4 uppercase italic tracking-tight leading-none">
                             {t("employability_contact_title")}
                         </h3>
                         <p className="text-white/50 text-[13px] md:text-sm font-normal italic tracking-wide leading-relaxed max-w-2xl mx-auto mb-8">

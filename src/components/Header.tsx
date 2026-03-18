@@ -152,7 +152,7 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group z-[1001]">
-            <div className="relative overflow-hidden h-9 w-9 rounded-lg">
+            <div className="relative overflow-hidden h-7 w-7 lg:h-9 lg:w-9 rounded-lg">
               <img
                 src="/assets/img/logo.webp"
                 alt="NearbyHiring"
@@ -161,10 +161,10 @@ const Header = () => {
               />
             </div>
             <span
-              className={`text-xl font-black tracking-tight text-slate-900 ${showGlass ? "lg:text-slate-900" : "lg:text-white"}`}
+              className={`text-lg lg:text-xl font-black tracking-tight text-slate-900 ${showGlass ? "lg:text-slate-900" : "lg:text-white"}`}
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              Nearby<span className="text-primary">Hiring</span>
+              Nearby<span className="text-blue-600">Hiring</span>
             </span>
           </Link>
 

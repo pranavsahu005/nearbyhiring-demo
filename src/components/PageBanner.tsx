@@ -34,21 +34,21 @@ const PageBanner = ({ title, subtitle, backgroundImage, breadcrumb }: PageBanner
   // Helper to split title for dual-color effect
   const renderTitle = (text: string) => {
     const words = text.split(" ");
-    if (words.length <= 1) return <span className="text-blue-500">{text}</span>;
+    if (words.length <= 1) return <span className="text-white">{text}</span>;
     
     const firstPart = words[0];
     const restPart = words.slice(1).join(" ");
     
     return (
       <>
-        <span className="text-blue-500">{firstPart}</span>
+        <span className="text-white">{firstPart}</span>
         <span className="text-white ml-3">{restPart}</span>
       </>
     );
   };
 
   return (
-    <div className="relative h-[200px] md:h-[350px] flex items-center overflow-hidden">
+    <div className="relative h-[260px] md:h-[350px] flex items-center overflow-hidden">
       {/* Dynamic Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -69,11 +69,11 @@ const PageBanner = ({ title, subtitle, backgroundImage, breadcrumb }: PageBanner
             <span className="text-white">{breadcrumb || title}</span>
           </nav>
 
-          <h1 className="text-2xl md:text-7xl font-black text-white mb-4 italic tracking-tighter uppercase leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 italic tracking-tighter uppercase leading-tight px-4 leading-[1.1]">
             {renderTitle(title)}
           </h1>
           {subtitle && (
-            <p className="text-blue-100/80 text-base md:text-xl font-bold italic tracking-wide max-w-2xl mx-auto">
+            <p className="text-blue-100/90 text-base md:text-lg font-bold italic tracking-wide max-w-2xl mx-auto px-6 drop-shadow-sm">
               {subtitle}
             </p>
           )}

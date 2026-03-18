@@ -1,18 +1,29 @@
 import { useRef, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 
-const images = [
-  { src: "/assets/img/screenshots/1.png", alt: "NearbyHiring App Screenshot 1" },
-  { src: "/assets/img/screenshots/2.png", alt: "NearbyHiring App Screenshot 2" },
-  { src: "/assets/img/screenshots/3.png", alt: "NearbyHiring App Screenshot 3" },
-  { src: "/assets/img/screenshots/4.png", alt: "NearbyHiring App Screenshot 4" },
-  { src: "/assets/img/screenshots/5.png", alt: "NearbyHiring App Screenshot 5" },
-  { src: "/assets/img/cta/Jobs slider.png", alt: "Jobs Slider" },
-  { src: "/assets/img/cta/category.png", alt: "Categories" },
-  { src: "/assets/img/cta/Benefits.png", alt: "Benefits" },
+const topImages = [
+  { src: "/assets/img/1.png", alt: "NearbyHiring Highlights 1" },
+  { src: "/assets/img/2.png", alt: "NearbyHiring Highlights 2" },
+  { src: "/assets/img/3.png", alt: "NearbyHiring Highlights 3" },
+  { src: "/assets/img/4.png", alt: "NearbyHiring Highlights 4" },
+  { src: "/assets/img/5.png", alt: "NearbyHiring Highlights 5" },
 ];
 
-const GalleryStrip = ({ offset = 0, speed = 1, direction = 1 }: {
+const bottomImages = [
+  { src: "/assets/img/6.png", alt: "NearbyHiring Highlights 6" },
+  { src: "/assets/img/7.png", alt: "NearbyHiring Highlights 7" },
+  { src: "/assets/img/8.png", alt: "NearbyHiring Highlights 8" },
+  { src: "/assets/img/9.png", alt: "NearbyHiring Highlights 9" },
+  { src: "/assets/img/10.png", alt: "NearbyHiring Highlights 10" },
+];
+
+const GalleryStrip = ({ 
+  images,
+  offset = 0, 
+  speed = 1, 
+  direction = 1 
+}: {
+  images: { src: string; alt: string }[];
   offset?: number;
   speed?: number;
   direction?: 1 | -1;
@@ -88,8 +99,8 @@ const HighlightsSection = () => {
 
       {/* Full-bleed gallery strips */}
       <div className="space-y-4 -mx-4 md:-mx-8 lg:-mx-16">
-        <GalleryStrip speed={1} direction={1} />
-        <GalleryStrip speed={0.7} direction={-1} offset={130} />
+        <GalleryStrip images={topImages} speed={1} direction={1} />
+        <GalleryStrip images={bottomImages} speed={0.7} direction={-1} offset={130} />
       </div>
 
       <div className="container mx-auto max-w-6xl mt-10 text-center" data-reveal>

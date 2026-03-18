@@ -11,9 +11,9 @@ interface BenefitProps {
 }
 
 const BenefitCard = ({ title, description, icon }: BenefitProps) => (
-  <div className="bg-white p-12 rounded-[3.5rem] border border-slate-100 hover:shadow-2xl hover:shadow-blue-100 transition-all duration-700 group hover:-translate-y-4" data-reveal>
-    <div className="h-20 w-20 bg-blue-50 rounded-[2rem] flex items-center justify-center mb-10 group-hover:bg-blue-600 transition-all duration-500 shadow-inner">
-      <div className="text-blue-600 group-hover:text-white transition-colors scale-125">
+  <div className="bg-white p-8 md:p-10 rounded-2xl md:rounded-3xl border border-slate-100 hover:shadow-2xl hover:shadow-blue-100 transition-all duration-700 group hover:-translate-y-4" data-reveal>
+    <div className="h-16 w-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-all duration-500 shadow-inner">
+      <div className="text-blue-600 group-hover:text-white transition-colors scale-110">
         {icon}
       </div>
     </div>
@@ -45,18 +45,18 @@ const JoinUs = () => {
               <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-8 italic uppercase text-center leading-[1.1]">
                 Join the <span className="text-blue-600 italic">Movement</span>
               </h2>
-              <p className="text-slate-500 text-xl max-w-3xl mx-auto font-bold opacity-80 uppercase italic tracking-widest leading-relaxed">
+              <p className="text-slate-500 text-base md:text-lg max-w-3xl mx-auto font-bold opacity-80 uppercase italic tracking-widest leading-relaxed">
                 {t("join_movement_desc")}
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 mb-32">
-              <div className="bg-white rounded-[2.5rem] md:rounded-[5rem] p-8 md:p-20 text-slate-900 relative overflow-hidden shadow-2xl border border-slate-100" data-reveal>
+              <div className="bg-white rounded-3xl md:rounded-3xl p-8 md:p-16 text-slate-900 relative overflow-hidden shadow-2xl border border-slate-100" data-reveal>
                  <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-                  <h3 className="text-3xl md:text-5xl font-black mb-10 uppercase tracking-tighter italic leading-none relative z-10">
-                    {t("gig_work")} <br/><span className="text-blue-300 shadow-sm">{t("earn_while_learn")}</span>
+                  <h3 className="text-3xl md:text-4xl font-black mb-10 uppercase tracking-tighter italic leading-none relative z-10">
+                    {t("gig_work")} <br/><span className="text-blue-600 shadow-sm">{t("earn_while_learn")}</span>
                   </h3>
-                  <p className="text-blue-100/70 text-xl font-bold italic tracking-wide mb-12 relative z-10">
+                  <p className="text-slate-600 text-lg font-bold italic tracking-wide mb-12 relative z-10">
                     {t("gig_work_desc")}
                   </p>
                  <ul className="space-y-6 mb-12 relative z-10">
@@ -66,23 +66,23 @@ const JoinUs = () => {
                       "join_opp_3",
                       "join_opp_4"
                     ].map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-4 text-slate-100 font-black italic uppercase text-sm tracking-tight border-b border-white/5 pb-4">
-                        <CheckCircle2 className="h-6 w-6 text-blue-400 flex-shrink-0" />
+                      <li key={idx} className="flex items-center gap-4 text-slate-600 font-black italic uppercase text-xs tracking-tight border-b border-slate-100 pb-4">
+                        <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0" />
                         {t(item)}
                       </li>
                    ))}
                  </ul>
               </div>
 
-              <div className="bg-white rounded-[5rem] p-12 md:p-20 border border-slate-100 shadow-xl flex flex-col justify-center relative overflow-hidden" data-reveal>
+              <div className="bg-white rounded-3xl p-12 md:p-16 border border-slate-100 shadow-xl flex flex-col justify-center relative overflow-hidden" data-reveal>
                 <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-slate-50 rounded-full blur-3xl" />
-                <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-10 uppercase tracking-tighter italic leading-none relative z-10">
+                <h3 className="text-3xl md:text-4xl font-black text-slate-900 mb-10 uppercase tracking-tighter italic leading-none relative z-10">
                   {t("opp_and")} <br/><span className="text-blue-600">{t("career_growth")}</span>
                 </h3>
-                <p className="text-slate-500 text-xl font-bold italic tracking-wide mb-12 relative z-10">
+                <p className="text-slate-600 text-lg font-bold italic tracking-wide mb-12 relative z-10">
                   {t("career_growth_desc")}
                 </p>
-                <div className="p-10 bg-blue-50/50 rounded-[3rem] border border-blue-100 relative z-10 backdrop-blur-3xl shadow-lg">
+                <div className="p-8 bg-blue-50/50 rounded-3xl border border-blue-100 relative z-10 backdrop-blur-3xl shadow-lg">
                   <div className="flex items-center gap-6 mb-8">
                     <div className="h-20 w-20 bg-blue-600 rounded-[1.5rem] flex items-center justify-center shadow-xl shadow-blue-200">
                       <Mail className="h-10 w-10 text-white" />

@@ -23,6 +23,21 @@ const HeroSection = () => {
       heading: t("hero_slide_3_heading"),
       sub: t("hero_slide_3_sub"),
     },
+    {
+      img: "/assets/img/hero-carousel/hero-carousel-4.png",
+      heading: t("hero_slide_4_heading"),
+      sub: t("hero_slide_4_sub"),
+    },
+    {
+      img: "/assets/img/hero-carousel/hero-carousel-5.png",
+      heading: t("hero_slide_5_heading"),
+      sub: t("hero_slide_5_sub"),
+    },
+    {
+      img: "/assets/img/hero-carousel/hero-carousel-6.png",
+      heading: t("hero_slide_6_heading"),
+      sub: t("hero_slide_6_sub"),
+    },
   ];
 
   /* Entry animations */

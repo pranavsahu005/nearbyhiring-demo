@@ -96,7 +96,7 @@ const Faq = () => {
                    <div className="h-20 w-20 bg-blue-50 rounded-[2rem] flex items-center justify-center text-blue-600 rotate-6 group-hover:rotate-0 transition-transform">
                       <Zap className="h-10 w-10 fill-current" />
                    </div>
-                   <h3 className="text-4xl font-black text-slate-900 italic uppercase tracking-tighter leading-none">{t("faq_global_queries")}</h3>
+                   <h3 className="text-4xl font-black text-slate-900 italic uppercase tracking-tighter leading-none">{t("faq_cat_language")}</h3>
                 </div>
                 <div className="space-y-2">
                   {faqs.map((faq, idx) => (

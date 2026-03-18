@@ -78,12 +78,12 @@ const Footer = () => {
         </div>
 
         {/* Brand Block Centered */}
-        <div className="flex flex-col items-center mb-16">
-          <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-2xl transition-transform hover:scale-110">
-            <img src="/assets/img/logo.webp" alt="Nearby Hiring" className="w-10 h-10 object-contain" />
+        <div className="flex flex-col items-center mb-10">
+          <div className="w-10 h-10 bg-white/10 backdrop-blur rounded-xl flex items-center justify-center mb-3 shadow-2xl transition-transform hover:scale-110 border border-white/10">
+            <img src="/assets/img/logo.webp" alt="Nearby Hiring" className="w-6 h-6 object-contain brightness-0 invert" />
           </div>
-          <h2 className="text-4xl font-black tracking-tight text-white mb-2">Nearby Hiring</h2>
-          <p className="text-white/60 text-sm max-w-md text-center">{t("footer_brand_tagline") || "Nearby Hiring is a Premium Career Platform focused on India's growth."}</p>
+          <h2 className="text-xl font-black tracking-tighter text-white mb-1 uppercase italic">Nearby<span className="text-blue-600">Hiring</span></h2>
+          <p className="text-white/50 text-[10px] max-w-sm text-center italic font-bold">{t("footer_brand_tagline") || "Nearby Hiring is a Premium Career Platform focused on India's growth."}</p>
         </div>
 
         {/* Link Sections Grid */}
@@ -93,7 +93,7 @@ const Footer = () => {
              <ul className="grid grid-cols-1 gap-4">
                 {sections.LINKS.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.to} className="text-sm font-medium text-white/80 hover:text-white transition-colors">
+                    <Link to={link.to} className="text-[13px] font-bold text-white/70 hover:text-white transition-colors italic tracking-tighter">
                       {link.label}
                     </Link>
                   </li>
@@ -106,7 +106,7 @@ const Footer = () => {
              <ul className="grid grid-cols-1 gap-4">
                 {sections.POLICIES.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.to} className="text-sm font-medium text-white/80 hover:text-white transition-colors">
+                    <Link to={link.to} className="text-[13px] font-bold text-white/70 hover:text-white transition-colors italic tracking-tighter">
                       {link.label}
                     </Link>
                   </li>
@@ -119,7 +119,7 @@ const Footer = () => {
              <ul className="grid grid-cols-1 gap-4">
                 {sections.DISCOVER.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.to} className="text-sm font-medium text-white/80 hover:text-white transition-colors">
+                    <Link to={link.to} className="text-[13px] font-bold text-white/70 hover:text-white transition-colors italic tracking-tighter">
                       {link.label}
                     </Link>
                   </li>
@@ -132,7 +132,7 @@ const Footer = () => {
              <ul className="grid grid-cols-1 gap-4">
                 {sections.COMMUNITY.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.to} className="text-sm font-medium text-white/80 hover:text-white transition-colors">
+                    <Link to={link.to} className="text-[13px] font-bold text-white/70 hover:text-white transition-colors italic tracking-tighter">
                       {link.label}
                     </Link>
                   </li>
@@ -145,7 +145,7 @@ const Footer = () => {
              <ul className="grid grid-cols-1 gap-4">
                 {sections.AI_CAREER_TOOLS.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.to} className="text-sm font-medium text-white/80 hover:text-white transition-colors">
+                    <Link to={link.to} className="text-[13px] font-bold text-white/70 hover:text-white transition-colors italic tracking-tighter">
                       {link.label}
                     </Link>
                   </li>

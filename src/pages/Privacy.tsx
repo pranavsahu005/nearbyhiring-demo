@@ -18,23 +18,24 @@ const Privacy = () => {
       <div className="py-16 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-10 text-center">
-              <h1 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 mb-3 italic uppercase">
-                Privacy <span className="text-blue-600">Policy</span>
+            <div className="mb-12 text-center" data-reveal>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 uppercase tracking-tighter italic leading-none text-slate-900">
+                Privacy{" "}
+                <span className="text-blue-600">Policy</span>
               </h1>
-              <p className="text-slate-500 text-sm font-bold italic">Protection of personal information — Since 01.07.2025</p>
+              <p className="text-slate-500 font-bold italic uppercase tracking-widest text-sm">Protection of personal information — Since 01.07.2025</p>
             </div>
 
             <div className="space-y-8">
               {/* Our Commitment */}
-              <section className="bg-white p-6 md:p-10 rounded-[2.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-blue-50 rounded-2xl text-blue-600 shadow-sm">
                     <Lock className="h-6 w-6" />
                   </div>
                   <h2 className="text-2xl font-black text-slate-900 italic uppercase tracking-tight">Our Commitment</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed space-y-4 font-normal italic">
                   <p className="font-bold text-base">
                     Eduskill Group and Eduskill Technologies Private Limited (Eduskill Technologies Pvt. Ltd.) acknowledges the significance of privacy to users and is fully dedicated to safeguarding the personal information that may be disclosed while accessing and utilizing the materials on the Eduskill Group website.
                   </p>
@@ -45,14 +46,14 @@ const Privacy = () => {
               </section>
 
               {/* 1. Anonymous Usage & Cookies */}
-              <section className="bg-white p-6 md:p-10 rounded-[2.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-indigo-50 rounded-2xl text-indigo-600 shadow-sm">
                     <Cookie className="h-6 w-6" />
                   </div>
                   <h2 className="text-2xl font-black text-slate-900 italic uppercase tracking-tight">1. Anonymous Usage & Cookies</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed space-y-4 font-normal italic">
                   <p className="font-bold text-base">Our website allows for anonymous usage, as it does not require any personal information. Usage data is never associated with you in the following scenarios.</p>
                   
                   <h3 className="text-lg font-black text-slate-800 mt-6">1.1 Cookies</h3>
@@ -87,14 +88,14 @@ const Privacy = () => {
               </section>
 
               {/* 1.3 Social Networks */}
-              <section className="bg-white p-6 md:p-10 rounded-[2.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-teal-50 rounded-2xl text-teal-600 shadow-sm">
                     <Share2 className="h-6 w-6" />
                   </div>
                   <h2 className="text-2xl font-black text-slate-900 italic uppercase tracking-tight">1.3 Social Network Links</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed space-y-4 font-normal italic">
                   <p className="font-bold text-base">
                     The website features links to several social networks. Clicking the link is the only way to establish a connection with the social network's web server. This means that no usage data will be transmitted to the social network until the associated link is clicked. The social network provider bears the responsibility for safeguarding your data within the network.
                   </p>
@@ -102,14 +103,14 @@ const Privacy = () => {
               </section>
 
               {/* 2. Personal Data Processing */}
-              <section className="bg-white p-6 md:p-10 rounded-[2.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-amber-50 rounded-2xl text-amber-600 shadow-sm">
                     <Database className="h-6 w-6" />
                   </div>
                   <h2 className="text-2xl font-black text-slate-900 italic uppercase tracking-tight">2. Personal Data Processing</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed space-y-4 font-normal italic">
                   <h3 className="text-lg font-black text-slate-800">2.1 Communication Bulletin</h3>
                   <p className="font-bold text-base">
                     If you choose to subscribe by checking the corresponding box or if we have obtained your email address through a download of further information, such as infographics, we will send you information about Eduskill Group, events, employment, seminars, services, and news. We send newsletters and ensure secure delivery through email tracking for each campaign.
@@ -121,14 +122,14 @@ const Privacy = () => {
               </section>
 
               {/* 3. Data Subject Rights */}
-              <section className="bg-white p-6 md:p-10 rounded-[2.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-green-50 rounded-2xl text-green-600 shadow-sm">
                     <ShieldCheck className="h-6 w-6" />
                   </div>
                   <h2 className="text-2xl font-black text-slate-900 italic uppercase tracking-tight">3. Data Subject Rights</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-6">
+                <div className="prose prose-slate max-w-3xl text-slate-600 leading-relaxed space-y-6 font-normal italic">
                   <div>
                     <h3 className="text-lg font-black text-slate-800">3.1 The Office Responsible</h3>
                     <p className="font-bold text-base">

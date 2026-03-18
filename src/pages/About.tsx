@@ -1,4 +1,4 @@
-import { Target, Lightbulb, Shield, Zap, CheckCircle2, Globe, Users, Award, ArrowRight, Sparkles } from "lucide-react";
+import { Target, Lightbulb, Shield, Zap, CheckCircle2, Globe, Users, Award, ArrowRight, Sparkles, Briefcase, Verified, Cpu, LineChart } from "lucide-react";
 import MainLayout from "@/components/MainLayout";
 import PageBanner from "@/components/PageBanner";
 import useScrollReveal from "@/hooks/useScrollReveal";
@@ -39,12 +39,71 @@ const About = () => {
                 <Sparkles className="h-3 w-3" />
                 {t("about_impact_eyebrow")}
               </div>
-              <h2 className="text-xl md:text-4xl font-black text-slate-900 mb-3 md:mb-4 italic uppercase leading-[1.2] md:leading-[1.1] tracking-tight">
-                {t("about_impact_title")}
+              <h2 className="text-xl md:text-3xl font-black text-slate-900 mb-4 md:mb-6 italic uppercase leading-[1.1] tracking-tighter">
+                {t("about_impact_title_prefix")} <span className="text-blue-600">{t("about_impact_title_accent")}</span>
               </h2>
-              <p className="text-slate-600 text-xs md:text-sm font-bold leading-relaxed italic opacity-80 uppercase tracking-wide">
-                {t("about_impact_desc")}
-              </p>
+              
+              <div className="space-y-4 md:space-y-6 mb-10 md:mb-14">
+                <p className="text-slate-600 text-xs md:text-base font-bold leading-relaxed italic opacity-90 uppercase tracking-wide">
+                  {t("about_whatwedo_subtitle")}
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-left">
+                  <div className="p-3 md:p-4 bg-white rounded-2xl border-b-4 border-blue-100 shadow-sm">
+                    <p className="text-slate-500 font-bold text-[9px] md:text-[10px] italic uppercase leading-relaxed">
+                      {t("about_whatwedo_item1")}
+                    </p>
+                  </div>
+                  <div className="p-3 md:p-4 bg-white rounded-2xl border-b-4 border-blue-100 shadow-sm">
+                    <p className="text-slate-500 font-bold text-[9px] md:text-[10px] italic uppercase leading-relaxed">
+                      {t("about_whatwedo_item2")}
+                    </p>
+                  </div>
+                  <div className="p-3 md:p-4 bg-white rounded-2xl border-b-4 border-blue-100 shadow-sm">
+                    <p className="text-slate-500 font-bold text-[9px] md:text-[10px] italic uppercase leading-relaxed">
+                      {t("about_whatwedo_item3")}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-3 pt-2">
+                  <button className="px-5 py-2.5 bg-blue-600 text-white font-black rounded-xl hover:bg-slate-900 transition-all duration-500 uppercase italic tracking-widest text-[9px] md:text-[10px] shadow-lg border-b-4 border-blue-800 active:border-b-0 active:translate-y-1">
+                    {t("about_get_hired_on_nearby")}
+                  </button>
+                  <button className="px-5 py-2.5 border-2 border-slate-900 text-slate-900 font-black rounded-xl hover:bg-slate-900 hover:text-white transition-all duration-500 uppercase italic tracking-widest text-[9px] md:text-[10px] shadow-sm">
+                    {t("about_hire_on_nearby")}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Video Section */}
+            <div className="px-2 md:px-0" data-reveal>
+              <div className="relative w-full max-w-[calc(100vw-20px)] mx-auto rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-4 border-white aspect-video md:aspect-auto md:h-[600px] group/video">
+                <video 
+                  src="/assets/video/slider.mp4" 
+                  autoPlay 
+                  muted 
+                  loop 
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+                {/* Thick Dark Blue Bottom Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/95 via-blue-950/40 to-transparent" />
+                
+                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                  <div className="text-center px-4 space-y-4">
+                    <h3 className="text-white text-2xl md:text-4xl font-black uppercase italic tracking-[0.2em] drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
+                      {t("about_video_title_prefix")} {t("about_video_title_accent")} <span className="text-blue-600">{t("about_video_title_suffix")}</span>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center mt-10">
+                <p className="text-blue-600 font-black text-xs md:text-lg italic uppercase tracking-[0.3em] leading-relaxed">
+                  {t("about_video_tagline")}
+                </p>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 mb-16 md:mb-20 items-center">
@@ -109,6 +168,136 @@ const About = () => {
                       <span className="text-slate-600 font-bold text-xs md:text-sm italic tracking-tight leading-snug pt-0.5">{item}</span>
                     </div>
                   ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Nearby Hiring Difference Section */}
+            <div className="space-y-12 md:space-y-16 py-8">
+              <div className="text-center mb-4 md:mb-8" data-reveal>
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 rounded-full font-black text-[9px] mb-3 uppercase tracking-[0.2em] italic shadow-sm">
+                  <Target className="h-3 w-3" />
+                  {t("about_diff_eyebrow")}
+                </div>
+                <h2 className="text-2xl md:text-4xl font-black text-slate-900 uppercase italic tracking-tighter">
+                  {t("about_diff_title_prefix")} <span className="text-blue-600">{t("about_diff_title_accent")}</span> {t("about_diff_title_suffix")}
+                </h2>
+              </div>
+
+              {/* Box 1 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white p-6 md:p-10 rounded-[2rem] shadow-md border-b-4 border-blue-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 group/box" data-reveal>
+                <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-1 rounded-[1.5rem] md:rounded-[2rem] shadow-lg group-hover/box:rotate-1 transition-transform duration-700">
+                   <div className="relative overflow-hidden rounded-[1.4rem] md:rounded-[1.9rem] bg-white aspect-[4/3]">
+                      <img src="/assets/img/options.png" alt="Options" className="w-full h-full object-cover" />
+                   </div>
+                </div>
+                <div className="space-y-6 relative overflow-visible">
+                  <span className="absolute -top-12 -left-6 text-8xl md:text-[10rem] font-black text-slate-100/60 -z-10 group-hover/box:text-blue-50 group-hover/box:scale-110 transition-all duration-700 select-none">1</span>
+                  <div className="flex items-center gap-4">
+                    <div className="h-10 w-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg group-hover/box:animate-bounce">
+                      <Briefcase className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase italic tracking-tighter">{t("about_diff_box1_title")}</h3>
+                  </div>
+                  <p className="text-slate-500 font-bold text-xs md:text-sm leading-relaxed italic opacity-80">
+                    {t("about_diff_box1_desc")}
+                  </p>
+                  <div className="p-4 bg-blue-50 rounded-2xl border-l-[6px] border-blue-600 italic font-bold text-slate-600 text-[10px] md:text-xs shadow-inner">
+                    {t("about_diff_box1_quote")}
+                  </div>
+                </div>
+              </div>
+
+              {/* Box 2 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white p-6 md:p-10 rounded-[2rem] shadow-md border-b-4 border-blue-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 group/box text-right md:text-left" data-reveal>
+                <div className="md:order-2 bg-gradient-to-bl from-blue-600 to-blue-800 p-1 rounded-[1.5rem] md:rounded-[2rem] shadow-lg group-hover/box:-rotate-1 transition-transform duration-700">
+                   <div className="relative overflow-hidden rounded-[1.4rem] md:rounded-[1.9rem] bg-white aspect-[4/3]">
+                      <img src="/assets/img/services1.png" alt="Service 1" className="w-full h-full object-cover" />
+                   </div>
+                </div>
+                <div className="md:order-1 space-y-6 relative overflow-visible">
+                  <span className="absolute -top-12 md:-right-6 text-8xl md:text-[10rem] font-black text-slate-100/60 -z-10 group-hover/box:text-blue-50 group-hover/box:scale-110 transition-all duration-700 select-none">2</span>
+                  <div className="flex items-center gap-4 justify-end md:justify-start">
+                    <div className="md:hidden h-10 w-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg group-hover/box:animate-spin">
+                      <Verified className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase italic tracking-tighter">{t("about_diff_box2_title")}</h3>
+                    <div className="hidden md:flex h-10 w-10 bg-blue-600 rounded-xl items-center justify-center text-white shadow-lg group-hover/box:animate-spin">
+                      <Verified className="h-5 w-5" />
+                    </div>
+                  </div>
+                  <p className="text-slate-500 font-bold text-xs md:text-sm leading-relaxed italic opacity-80">
+                    {t("about_diff_box2_desc")}
+                  </p>
+                  <div className="p-4 bg-blue-50 rounded-2xl border-r-4 md:border-r-0 md:border-l-[6px] border-blue-600 italic font-bold text-slate-600 text-[10px] md:text-xs shadow-inner">
+                    {t("about_diff_box2_quote")}
+                  </div>
+                </div>
+              </div>
+
+              {/* Box 3 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white p-6 md:p-10 rounded-[2rem] shadow-md border-b-4 border-blue-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 group/box" data-reveal>
+                <div className="bg-gradient-to-tr from-blue-600 to-blue-800 p-1 rounded-[1.5rem] md:rounded-[2rem] shadow-lg group-hover/box:rotate-1 transition-transform duration-700">
+                   <div className="relative overflow-hidden rounded-[1.4rem] md:rounded-[1.9rem] bg-white aspect-[4/3]">
+                      <img src="/assets/img/service2.png" alt="Service 2" className="w-full h-full object-cover" />
+                   </div>
+                </div>
+                <div className="space-y-6 relative overflow-visible">
+                  <span className="absolute -top-12 -left-6 text-8xl md:text-[10rem] font-black text-slate-100/60 -z-10 group-hover/box:text-blue-50 group-hover/box:scale-110 transition-all duration-700 select-none">3</span>
+                  <div className="flex items-center gap-4">
+                    <div className="h-10 w-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg group-hover/box:animate-pulse">
+                      <Cpu className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase italic tracking-tighter">{t("about_diff_box3_title")}</h3>
+                  </div>
+                  <p className="text-slate-500 font-bold text-xs md:text-sm leading-relaxed italic opacity-80">
+                    {t("about_diff_box3_desc")}
+                  </p>
+                </div>
+              </div>
+
+              {/* Box 4 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white p-6 md:p-10 rounded-[2rem] shadow-md border-b-4 border-blue-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 group/box text-right md:text-left" data-reveal>
+                <div className="md:order-2 bg-gradient-to-tl from-blue-600 to-blue-800 p-1 rounded-[1.5rem] md:rounded-[2rem] shadow-lg group-hover/box:-rotate-1 transition-transform duration-700">
+                   <div className="relative overflow-hidden rounded-[1.4rem] md:rounded-[1.9rem] bg-white aspect-[4/3]">
+                      <img src="/assets/img/service3.png" alt="Service 3" className="w-full h-full object-cover" />
+                   </div>
+                </div>
+                <div className="md:order-1 space-y-6 relative overflow-visible">
+                  <span className="absolute -top-12 md:-right-6 text-8xl md:text-[10rem] font-black text-slate-100/60 -z-10 group-hover/box:text-blue-50 group-hover/box:scale-110 transition-all duration-700 select-none">4</span>
+                  <div className="flex items-center gap-4 justify-end md:justify-start">
+                    <div className="md:hidden h-10 w-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg group-hover/box:animate-bounce">
+                      <Globe className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase italic tracking-tighter">{t("about_diff_box4_title")}</h3>
+                    <div className="hidden md:flex h-10 w-10 bg-blue-600 rounded-xl items-center justify-center text-white shadow-lg group-hover/box:animate-bounce">
+                      <Globe className="h-5 w-5" />
+                    </div>
+                  </div>
+                  <p className="text-slate-500 font-bold text-xs md:text-sm leading-relaxed italic opacity-80">
+                    {t("about_diff_box4_desc")}
+                  </p>
+                </div>
+              </div>
+
+              {/* Box 5 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white p-6 md:p-10 rounded-[2rem] shadow-md border-b-4 border-blue-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 group/box" data-reveal>
+                 <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-1 rounded-[1.5rem] md:rounded-[2.5rem] shadow-lg group-hover/box:rotate-1 transition-transform duration-700">
+                   <div className="relative overflow-hidden rounded-[1.4rem] md:rounded-[1.9rem] bg-white aspect-[4/3]">
+                      <img src="/assets/img/service4.png" alt="Service 4" className="w-full h-full object-cover" />
+                   </div>
+                </div>
+                <div className="space-y-6 relative overflow-visible">
+                  <span className="absolute -top-12 -left-6 text-8xl md:text-[10rem] font-black text-slate-100/60 -z-10 group-hover/box:text-blue-50 group-hover/box:scale-110 transition-all duration-700 select-none">5</span>
+                  <div className="flex items-center gap-4">
+                    <div className="h-10 w-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg group-hover/box:animate-pulse">
+                      <LineChart className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase italic tracking-tighter">{t("about_diff_box5_title")}</h3>
+                  </div>
+                  <p className="text-slate-500 font-bold text-xs md:text-sm leading-relaxed italic opacity-80">
+                    {t("about_diff_box5_desc")}
+                  </p>
                 </div>
               </div>
             </div>

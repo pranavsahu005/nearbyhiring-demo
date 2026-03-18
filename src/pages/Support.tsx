@@ -80,9 +80,9 @@ const Support = () => {
               <HelpCircle className="h-4 w-4" />
               How Can We Help?
             </div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-6 italic uppercase">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 mb-6 italic uppercase">
               We're Always <span className="text-blue-600">Here for You</span>
-            </h2>
+            </h1>
             <p className="text-slate-500 text-lg font-bold max-w-2xl mx-auto">
               Our support team is available 7 days a week to help you with jobs, registrations, employer queries, and technical issues.
             </p>
@@ -113,7 +113,7 @@ const Support = () => {
                 color: "bg-emerald-600",
               },
             ].map((card, i) => (
-              <div key={i} className="bg-white rounded-[3rem] p-10 border border-slate-100 shadow-xl shadow-blue-100/40 flex flex-col items-start gap-6 hover:-translate-y-2 transition-all duration-500">
+              <div key={i} className="bg-white rounded-3xl p-10 border border-slate-100 shadow-xl shadow-blue-100/40 flex flex-col items-start gap-6 hover:-translate-y-2 transition-all duration-500">
                 <div className={`${card.color} p-4 rounded-2xl text-white shadow-lg`}>
                   {card.icon}
                 </div>
@@ -129,7 +129,7 @@ const Support = () => {
           </div>
 
           {/* FAQ */}
-          <div className="bg-white rounded-[4rem] p-8 md:p-16 border border-slate-100 shadow-2xl shadow-blue-100/30 mb-20" data-reveal>
+          <div className="bg-white rounded-3xl p-8 md:p-16 border border-slate-100 shadow-2xl shadow-blue-100/30 mb-20" data-reveal>
             <h3 className="text-3xl font-black text-slate-900 mb-10 uppercase italic tracking-tighter flex items-center gap-4">
               <span className="h-10 w-2 bg-blue-600 rounded-full" />
               Frequently Asked Questions
@@ -142,9 +142,9 @@ const Support = () => {
           </div>
 
           {/* Help Desk Form */}
-          <div className="bg-white rounded-[3rem] overflow-hidden border border-slate-100 shadow-2xl shadow-blue-100/30" data-reveal>
+          <div className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-2xl shadow-blue-100/30" data-reveal>
             <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-8 md:p-12 text-white">
-              <h3 className="text-3xl font-black uppercase italic tracking-tighter mb-2">
+              <h3 className="text-2xl md:text-3xl text-white uppercase italic tracking-tighter mb-2">
                 Help Desk
               </h3>
               <p className="text-blue-100 font-bold italic">
@@ -204,7 +204,6 @@ const Support = () => {
                     required
                   />
                 </div>
-
                 {/* Google reCAPTCHA */}
                 <div className="md:col-span-2 flex flex-col items-center justify-center py-4 border-y border-slate-50 my-4">
                   <div 
@@ -217,7 +216,6 @@ const Support = () => {
                     Verified Help Desk Security Active
                   </div>
                 </div>
-
                 {/* Privacy Checkbox */}
                 <div className="md:col-span-2 flex items-start gap-3">
                   <input 

@@ -19,9 +19,10 @@ const DataProtection = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="mb-12 text-center" data-reveal>
-              <h2 className="text-2xl md:text-5xl font-black tracking-tight text-slate-900 mb-6 italic uppercase">
-                Data Protection <span className="text-blue-600">Policy</span>
-              </h2>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 uppercase tracking-tighter italic leading-none text-slate-900">
+                Data Protection{" "}
+                <span className="text-blue-600">Policy</span>
+              </h1>
               <p className="text-slate-500 font-bold italic uppercase tracking-widest">Valid Since July 01, 2025</p>
             </div>
 
@@ -32,7 +33,7 @@ const DataProtection = () => {
                   <div className="p-4 bg-blue-50 rounded-2xl text-blue-600 shadow-sm">
                     <ShieldCheck className="h-8 w-8" />
                   </div>
-                  <h2 className="text-xl md:text-3xl font-black text-slate-900 italic uppercase tracking-tight">1. General</h2>
+                  <h2 className="text-xl md:text-2xl font-black text-slate-900 italic uppercase tracking-tight">1. General</h2>
                 </div>
                 <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed font-normal italic text-sm space-y-4">
                   <p>
@@ -42,13 +43,13 @@ const DataProtection = () => {
               </section>
 
               {/* 2. Purpose & Processing Table */}
-              <section className="bg-white overflow-hidden rounded-[3rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white overflow-hidden rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="p-8 md:p-12 border-b border-slate-100 bg-slate-50/50">
                   <div className="flex items-center gap-6">
                     <div className="p-4 bg-indigo-50 rounded-2xl text-indigo-600 shadow-sm">
                       <FileText className="h-8 w-8" />
                     </div>
-                    <h2 className="text-xl md:text-3xl font-black text-slate-900 italic uppercase tracking-tight">2. Purpose & Processing</h2>
+                    <h2 className="text-xl md:text-2xl font-black text-slate-900 italic uppercase tracking-tight">2. Purpose & Processing</h2>
                   </div>
                 </div>
                 <div className="overflow-x-auto">
@@ -140,14 +141,31 @@ const DataProtection = () => {
                   <div className="p-4 bg-amber-50 rounded-2xl text-amber-600 shadow-sm">
                     <Database className="h-8 w-8" />
                   </div>
-                  <h2 className="text-3xl font-black text-slate-900 italic uppercase tracking-tight">4. Sources & Transfers</h2>
+                  <h2 className="text-xl md:text-2xl font-black text-slate-900 italic uppercase tracking-tight">4. Sources & Transfers</h2>
                 </div>
                 <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-6">
                   <div>
                     <h3 className="text-lg font-black text-slate-800 mb-3">Sources of Personal Data</h3>
-                    <p className="font-bold text-lg">
-                      Personal data is primarily obtained directly from you. Under some circumstances mandated by laws, we may also gather personal information from external sources, such as official registries.
-                    </p>
+                    <div className="space-y-4">
+                      <p className="font-bold text-lg">
+                        Personal data is primarily obtained directly from you. We also gather information from strategic and official sources to ensure the best career matching.
+                      </p>
+                      <ul className="grid md:grid-cols-2 gap-4 list-none p-0">
+                        {[
+                          "Direct submission via registration forms and profile updates",
+                          "Educational institutions (ITI, Polytechnic, Vocational Centers) for verification",
+                          "Government databases and official registries (with explicit consent)",
+                          "Professional networking platforms and public career profiles",
+                          "Industry-specific skill assessment partners and testing agencies",
+                          "Employment exchanges and government-affiliated job portals"
+                        ].map((source, i) => (
+                          <li key={i} className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 text-xs font-bold italic text-slate-900">
+                            <div className="h-1.5 w-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0" />
+                            {source}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                   <div>
                     <h3 className="text-lg font-black text-slate-800 mb-3">Transfers & Disclosures</h3>
@@ -164,7 +182,7 @@ const DataProtection = () => {
                   <div className="p-4 bg-purple-50 rounded-2xl text-purple-600 shadow-sm">
                     <Globe className="h-8 w-8" />
                   </div>
-                  <h2 className="text-3xl font-black text-slate-900 italic uppercase tracking-tight">5. International Data Transfer</h2>
+                  <h2 className="text-xl md:text-2xl font-black text-slate-900 italic uppercase tracking-tight">5. International Data Transfer</h2>
                 </div>
                 <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed">
                   <p className="font-bold text-lg">
@@ -179,7 +197,7 @@ const DataProtection = () => {
                   <div className="p-4 bg-green-50 rounded-2xl text-green-600 shadow-sm">
                     <ShieldCheck className="h-8 w-8" />
                   </div>
-                  <h2 className="text-3xl font-black text-slate-900 italic uppercase tracking-tight">6. Protection Measures</h2>
+                  <h2 className="text-xl md:text-2xl font-black text-slate-900 italic uppercase tracking-tight">6. Protection Measures</h2>
                 </div>
                 <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed">
                   <p className="font-bold text-lg">
@@ -194,7 +212,7 @@ const DataProtection = () => {
                   <div className="p-4 bg-rose-50 rounded-2xl text-rose-600 shadow-sm">
                     <Lock className="h-8 w-8" />
                   </div>
-                  <h2 className="text-3xl font-black text-slate-900 italic uppercase tracking-tight">7. Data Retention Period</h2>
+                  <h2 className="text-xl md:text-2xl font-black text-slate-900 italic uppercase tracking-tight">7. Data Retention Period</h2>
                 </div>
                 <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed">
                   <p className="font-bold text-lg">
@@ -204,7 +222,7 @@ const DataProtection = () => {
               </section>
 
               {/* 8. Entitlements */}
-              <section className="bg-white p-6 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-12 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-6 mb-12">
                   <div className="p-4 bg-blue-50 rounded-2xl text-blue-600 shadow-sm">
                     <UserCheck className="h-8 w-8" />
@@ -230,7 +248,7 @@ const DataProtection = () => {
                       desc: "The data subjects have the right to have all their personal data erased, that is, to be forgotten. This right may be limited by legal obligations." 
                     }
                   ].map((right, idx) => (
-                    <div key={idx} className="p-6 md:p-8 bg-slate-50/50 rounded-[1.5rem] md:rounded-[2.5rem] border border-slate-100 hover:bg-blue-600 hover:text-white transition-all group duration-500">
+                    <div key={idx} className="p-6 md:p-8 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-blue-600 hover:text-white transition-all group duration-500">
                       <div className="flex items-start gap-4">
                         <div className="bg-white p-2 rounded-xl group-hover:bg-blue-500 text-blue-600 group-hover:text-white transition-colors">
                           <CheckCircle2 className="h-5 w-5" />
@@ -251,7 +269,7 @@ const DataProtection = () => {
                   <div className="p-4 bg-orange-50 rounded-2xl text-orange-600 shadow-sm">
                     <UserCheck className="h-8 w-8" />
                   </div>
-                  <h2 className="text-3xl font-black text-slate-900 italic uppercase tracking-tight">9. Your Rights</h2>
+                  <h2 className="text-xl md:text-2xl font-black text-slate-900 italic uppercase tracking-tight">9. Your Rights</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
@@ -273,18 +291,21 @@ const DataProtection = () => {
               </section>
 
               {/* 9. Contact DPO */}
-              <section className="bg-blue-900 p-8 md:p-12 rounded-[3rem] shadow-xl text-white text-center" data-reveal>
-                <h2 className="text-2xl font-black uppercase italic tracking-tight mb-4">9. Data Protection Officer</h2>
-                <p className="text-white/70 font-bold text-lg mb-6 max-w-2xl mx-auto">
-                  Eduskill Employment Division has designated an internal data protection expert. The contact information of the data controller can be reached at:
-                </p>
-                <a 
-                  href="mailto:info@eduskill.org" 
-                  className="inline-flex items-center gap-3 px-10 py-4 bg-blue-600 text-white font-black rounded-2xl hover:bg-white hover:text-blue-600 transition-all text-sm uppercase italic tracking-widest shadow-2xl"
-                >
-                  <Mail className="h-5 w-5" />
-                  info@eduskill.org
-                </a>
+              <section className="bg-blue-900 p-8 md:p-12 rounded-3xl shadow-xl text-center relative overflow-hidden" data-reveal>
+                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl opacity-50" />
+                <div className="relative z-10">
+                  <h2 className="text-2xl font-black uppercase italic tracking-tight mb-4 text-white">9. Data Protection Officer</h2>
+                  <p className="text-white/70 font-bold text-lg mb-6 max-w-2xl mx-auto">
+                    Eduskill Employment Division has designated an internal data protection expert. The contact information of the data controller can be reached at:
+                  </p>
+                  <a 
+                    href="mailto:info@eduskill.org" 
+                    className="inline-flex items-center gap-3 px-10 py-4 bg-blue-600 text-white font-black rounded-2xl hover:bg-white hover:text-blue-600 transition-all text-sm uppercase italic tracking-widest shadow-2xl"
+                  >
+                    <Mail className="h-5 w-5" />
+                    info@eduskill.org
+                  </a>
+                </div>
               </section>
             </div>
           </div>

@@ -23,8 +23,9 @@ const RecruitmentData = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="mb-12 text-center" data-reveal>
-              <h2 className="text-2xl md:text-5xl font-black tracking-tight text-slate-900 mb-6 italic uppercase">
-                Recruitment Data <span className="text-blue-600">Protection Policy</span>
+              <h2 className="text-2xl md:text-3xl font-black tracking-tight text-slate-900 mb-6 italic uppercase">
+                Recruitment Data{" "}
+                <span className="text-blue-600">Protection Policy</span>
               </h2>
               <p className="text-slate-500 font-bold italic uppercase tracking-widest text-sm">Eduskill Employment Division (Eduskill Technologies Private Limited)</p>
               <div className="inline-flex items-center gap-3 px-6 py-2 bg-white rounded-full border border-slate-100 shadow-sm mt-4">
@@ -35,7 +36,7 @@ const RecruitmentData = () => {
 
             <div className="grid gap-8">
               {/* 1. Introduction */}
-              <section className="bg-white p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-2xl md:rounded-[2.5rem] shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-6 mb-8">
                   <div className="p-4 bg-blue-50 rounded-2xl text-blue-600">
                     <Info className="h-8 w-8" />
@@ -53,7 +54,7 @@ const RecruitmentData = () => {
               </section>
 
               {/* 2. Data Processing */}
-              <section className="bg-blue-900 p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] text-white relative overflow-hidden" data-reveal>
+              <section className="bg-blue-900 p-6 md:p-10 rounded-2xl text-white relative overflow-hidden" data-reveal>
                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl opacity-50" />
                 <div className="flex items-center gap-6 mb-8 relative z-10">
                   <div className="p-4 bg-white/5 rounded-2xl text-blue-400 border border-white/10">
@@ -62,7 +63,7 @@ const RecruitmentData = () => {
                   <h3 className="text-xl md:text-2xl font-black text-white uppercase italic relative z-10">2. Purposes of Data Processing</h3>
                 </div>
                 <div className="relative z-10 space-y-6">
-                  <p className="text-white/70 font-semibold italic text-sm">
+                  <p className="text-white font-semibold italic text-sm">
                     We exclusively gather and handle personal data solely for explicitly defined objectives. The following data may be processed:
                   </p>
                   <div className="grid md:grid-cols-2 gap-4">
@@ -76,7 +77,7 @@ const RecruitmentData = () => {
                       "Assessments of suitability and personality",
                       "Credit and security reports"
                     ].map((item, i) => (
-                      <div key={i} className="p-4 bg-white/5 rounded-2xl border border-white/10 text-white/80 text-xs font-bold italic flex items-start gap-3">
+                      <div key={i} className="p-4 bg-white/5 rounded-xl border border-white/10 text-white text-xs font-bold italic flex items-start gap-3">
                         <div className="h-1.5 w-1.5 rounded-full bg-blue-400 mt-1.5 shrink-0" />
                         {item}
                       </div>
@@ -92,7 +93,7 @@ const RecruitmentData = () => {
               </section>
 
               {/* 3. Legal Purposes */}
-              <section className="bg-white p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-2xl md:rounded-[2.5rem] shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-6 mb-8">
                   <div className="p-4 bg-emerald-50 rounded-2xl text-emerald-600">
                     <Scale className="h-8 w-8" />
@@ -122,19 +123,34 @@ const RecruitmentData = () => {
 
               {/* 4 & 5: Sources + Transfers */}
               <div className="grid md:grid-cols-2 gap-8">
-                <section className="bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+                <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                   <div className="flex items-center gap-4 mb-6">
                     <div className="p-3 bg-amber-50 rounded-xl text-amber-600">
                       <Search className="h-6 w-6" />
                     </div>
                     <h3 className="text-xl font-black text-slate-900 uppercase italic">4. Sources of Data</h3>
                   </div>
-                  <p className="text-slate-500 font-normal italic text-sm leading-relaxed">
-                    Personal data is primarily obtained directly from individuals. Under some circumstances mandated by laws, we may also gather personal information from external sources, such as official registries. For instance, data is gathered from authorized databases with your explicit permission for security or credit investigations.
+                  <p className="text-slate-500 font-normal italic text-sm leading-relaxed mb-6">
+                    Personal data is primarily obtained directly from individuals. Under some circumstances mandated by laws, we may also gather personal information from external sources, such as official registries.
                   </p>
+                  <ul className="grid md:grid-cols-2 gap-4 list-none p-0">
+                    {[
+                      "Direct submission via registration forms and profile updates",
+                      "Educational institutions (ITI, Polytechnic, Vocational Centers) for verification",
+                      "Government databases and official registries (with explicit consent)",
+                      "Professional networking platforms and public career profiles",
+                      "Industry-specific skill assessment partners and testing agencies",
+                      "Employment exchanges and government-affiliated job portals"
+                    ].map((source, i) => (
+                      <li key={i} className="flex items-start gap-2 p-4 bg-slate-50 rounded-2xl border border-slate-100 text-[10px] font-black italic text-slate-600 uppercase tracking-wider">
+                        <div className="h-1 w-1 rounded-full bg-blue-600 mt-1 shrink-0" />
+                        {source}
+                      </li>
+                    ))}
+                  </ul>
                 </section>
 
-                <section className="bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+                <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                   <div className="flex items-center gap-4 mb-6">
                     <div className="p-3 bg-indigo-50 rounded-xl text-indigo-600">
                       <Globe className="h-6 w-6" />
@@ -157,7 +173,7 @@ const RecruitmentData = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
-                <section className="bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+                <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                   <div className="flex items-center gap-4 mb-6">
                     <div className="p-3 bg-indigo-50 rounded-xl text-indigo-600">
                       <Lock className="h-6 w-6" />
@@ -169,7 +185,7 @@ const RecruitmentData = () => {
                   </p>
                 </section>
 
-                <section className="bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+                <section className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-reveal>
                   <div className="flex items-center gap-4 mb-6">
                     <div className="p-3 bg-rose-50 rounded-xl text-rose-600">
                       <Settings className="h-6 w-6" />
@@ -183,7 +199,7 @@ const RecruitmentData = () => {
               </div>
 
               {/* 8. Data Retention */}
-              <section className="bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-10 rounded-2xl md:rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-green-50 rounded-xl text-green-600">
                     <ShieldCheck className="h-6 w-6" />
@@ -196,7 +212,7 @@ const RecruitmentData = () => {
               </section>
 
               {/* 9. Data Subject Rights */}
-              <section className="bg-white p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-12 rounded-2xl md:rounded-3xl shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-6 mb-8">
                   <div className="p-4 bg-blue-50 rounded-2xl text-blue-600">
                     <UserCheck className="h-8 w-8" />
@@ -230,10 +246,10 @@ const RecruitmentData = () => {
               </section>
 
               {/* 10 & 11: DPDP + Contact */}
-              <div className="bg-slate-900 rounded-[2rem] md:rounded-[3.5rem] p-8 md:p-12 text-white relative overflow-hidden" data-reveal>
+              <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden" data-reveal>
                 <div className="absolute inset-0 bg-blue-600/5 backdrop-blur-3xl" />
                 <div className="relative z-10 space-y-8">
-                  <h2 className="text-xl md:text-3xl font-black text-white uppercase italic tracking-tighter shadow-sm">10. Digital Personal Data Protection</h2>
+                  <h2 className="text-xl md:text-2xl font-black text-white uppercase italic tracking-tighter shadow-sm">10. Digital Personal Data Protection</h2>
                   <div className="grid md:grid-cols-2 gap-10 text-left">
                     <div>
                       <h4 className="text-blue-300 font-black uppercase italic text-sm mb-4">Complaint Mechanism</h4>
@@ -248,7 +264,7 @@ const RecruitmentData = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="p-8 bg-white/5 rounded-[2rem] border border-white/10 text-left">
+                  <div className="p-8 bg-white/5 rounded-2xl md:rounded-3xl border border-white/10 text-left">
                      <h4 className="text-white font-black uppercase italic text-sm mb-4">Internal Data Protection Expert</h4>
                      <p className="text-white/60 text-xs font-bold italic leading-relaxed mb-6">
                        Eduskill Employment Division and Eduskill Group have designated an internal expert as their data protection officer. The DPO oversees handling, provides guidance, and serves as a point of contact for inquiries.
@@ -262,8 +278,8 @@ const RecruitmentData = () => {
                     </a>
                   </div>
                   <div className="pt-8 border-t border-white/5 text-left">
-                    <h3 className="text-lg font-black uppercase italic mb-4">11. Revisions to the Data Protection Declaration</h3>
-                    <p className="text-white/40 text-xs font-bold italic leading-relaxed">
+                    <h3 className="text-lg font-black text-white uppercase italic mb-4">11. Revisions to the Data Protection Declaration</h3>
+                    <p className="text-white/70 text-xs font-bold italic leading-relaxed">
                       Our privacy practices are always being enhanced, and as a result, this privacy notice will be periodically updated. Updates may result from modifications in legislation. We advise you to revisit this page in order to stay updated on any potential alterations. If necessary, we may also notify you directly.
                     </p>
                   </div>
