@@ -1,7 +1,7 @@
 import MainLayout from "@/components/MainLayout";
 import PageBanner from "@/components/PageBanner";
 import useScrollReveal from "@/hooks/useScrollReveal";
-import { ShieldCheck, UserCheck, Globe, FileText, Info, Lock, Database, Mail, Scale } from "lucide-react";
+import { ShieldCheck, FileText, Lock, UserCheck, Globe, Shield, Scale, AlertCircle, CheckCircle2, Info, Database, Mail } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const DataProtection = () => {
@@ -18,28 +18,25 @@ const DataProtection = () => {
       <div className="py-24 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <div className="mb-12 text-center">
-              <h1 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-4 italic uppercase">
+            <div className="mb-12 text-center" data-reveal>
+              <h2 className="text-2xl md:text-5xl font-black tracking-tight text-slate-900 mb-6 italic uppercase">
                 Data Protection <span className="text-blue-600">Policy</span>
-              </h1>
+              </h2>
               <p className="text-slate-500 font-bold italic uppercase tracking-widest">Valid Since July 01, 2025</p>
             </div>
 
             <div className="space-y-12">
-              {/* 1. Introduction */}
-              <section className="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-slate-100" data-reveal>
+              {/* 1. General */}
+              <section className="bg-white p-6 md:p-12 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-6 mb-8">
                   <div className="p-4 bg-blue-50 rounded-2xl text-blue-600 shadow-sm">
-                    <Info className="h-8 w-8" />
+                    <ShieldCheck className="h-8 w-8" />
                   </div>
-                  <h2 className="text-3xl font-black text-slate-900 italic uppercase tracking-tight">1. Introduction</h2>
+                  <h2 className="text-xl md:text-3xl font-black text-slate-900 italic uppercase tracking-tight">1. General</h2>
                 </div>
-                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-6">
-                  <p className="font-bold text-lg">
-                    At Eduskill Employment Division, we prioritize the trustworthiness of our data handling practices, ensuring cautious and transparent treatment of your personal information while respecting your privacy. When handling your personal data, we adhere closely to the Digital Personal Data Protection Regulations (DPDP) in India and other data protection laws.
-                  </p>
-                  <p className="font-bold text-lg">
-                    Our goal is to consistently follow best practices in data protection. This data protection statement outlines the methods by which we gather, handle, and safeguard the personal information of our B2B clients.
+                <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed font-normal italic text-sm space-y-4">
+                  <p>
+                    NearbyHiring (NearbyHiring Employment Division) and NearbyHiring (NearbyHiring technologies private limited) respects your privacy and we consistently adhere to the highest standards of privacy. This Data Protection Notice is intended to delineate how we collect, handle, and safeguard personal data.
                   </p>
                 </div>
               </section>
@@ -51,7 +48,7 @@ const DataProtection = () => {
                     <div className="p-4 bg-indigo-50 rounded-2xl text-indigo-600 shadow-sm">
                       <FileText className="h-8 w-8" />
                     </div>
-                    <h2 className="text-3xl font-black text-slate-900 italic uppercase tracking-tight">2. Purpose & Processing</h2>
+                    <h2 className="text-xl md:text-3xl font-black text-slate-900 italic uppercase tracking-tight">2. Purpose & Processing</h2>
                   </div>
                 </div>
                 <div className="overflow-x-auto">
@@ -66,28 +63,46 @@ const DataProtection = () => {
                     </thead>
                     <tbody className="divide-y divide-slate-100 uppercase italic tracking-tight font-black text-xs">
                       <tr>
-                        <td className="p-8 text-slate-600">Processing of contacts received</td>
-                        <td className="p-8 text-slate-600">Legitimate interest or consent</td>
-                        <td className="p-8 text-slate-600">Name, email, message data</td>
-                        <td className="p-8 text-slate-600 text-blue-600">3 Years from last contact</td>
+                        <td className="p-6 text-slate-700">Processing of contacts received</td>
+                        <td className="p-6 text-slate-500">Legitimate interest in received contact</td>
+                        <td className="p-6 text-slate-500">Name, email, message data</td>
+                        <td className="p-6 text-blue-600">3 Years from last contact</td>
                       </tr>
                       <tr>
-                        <td className="p-8 text-slate-600">Direct Marketing</td>
-                        <td className="p-8 text-slate-600">Legitimate Interest</td>
-                        <td className="p-8 text-slate-600">Name, Email, Phone</td>
-                        <td className="p-8 text-slate-600 text-blue-600">3 Years</td>
+                        <td className="p-6 text-slate-700">Direct Marketing</td>
+                        <td className="p-6 text-slate-500">Legitimate interest in Customer Relationships</td>
+                        <td className="p-6 text-slate-500">Name, Company, Title, Email, Phone</td>
+                        <td className="p-6 text-blue-600">3 Years from last update</td>
                       </tr>
                       <tr>
-                        <td className="p-8 text-slate-600">CRM & Statistical Analysis</td>
-                        <td className="p-8 text-slate-600">Promoting Relationship</td>
-                        <td className="p-8 text-slate-600">Name, Title, Company, Communication data</td>
-                        <td className="p-8 text-slate-600 text-blue-600">Duration of Relationship</td>
+                        <td className="p-6 text-slate-700">Personalized marketing</td>
+                        <td className="p-6 text-slate-500">Consent, legitimate interest</td>
+                        <td className="p-6 text-slate-500">Name, Company, Title, Email, Phone</td>
+                        <td className="p-6 text-blue-600">3 Years from last contact</td>
                       </tr>
                       <tr>
-                        <td className="p-8 text-slate-600">Invoicing</td>
-                        <td className="p-8 text-slate-600">Contractual / Legal</td>
-                        <td className="p-8 text-slate-600">Organization Data, TLE info</td>
-                        <td className="p-8 text-slate-600 text-blue-600">As per law</td>
+                        <td className="p-6 text-slate-700">Statistical analysis</td>
+                        <td className="p-6 text-slate-500">Consent, contract</td>
+                        <td className="p-6 text-slate-500">Name, email address, title</td>
+                        <td className="p-6 text-blue-600">3 Years from last event</td>
+                      </tr>
+                      <tr>
+                        <td className="p-6 text-slate-700">Conducting research and surveys</td>
+                        <td className="p-6 text-slate-500">Consent</td>
+                        <td className="p-6 text-slate-500">Name, email address, title</td>
+                        <td className="p-6 text-blue-600">3 Years from collection</td>
+                      </tr>
+                      <tr>
+                        <td className="p-6 text-slate-700">CRM & Statistical Analysis</td>
+                        <td className="p-6 text-slate-500">Promoting Relationship</td>
+                        <td className="p-6 text-slate-500">Name, Title, Company, Communication data</td>
+                        <td className="p-6 text-blue-600">3 Years from update</td>
+                      </tr>
+                      <tr>
+                        <td className="p-6 text-slate-700">Assignment management & invoicing</td>
+                        <td className="p-6 text-slate-500">Contractual Relationship</td>
+                        <td className="p-6 text-slate-500">Name, email, title, company</td>
+                        <td className="p-6 text-blue-600">Duration of Relationship + Accounting period</td>
                       </tr>
                     </tbody>
                   </table>
@@ -95,29 +110,25 @@ const DataProtection = () => {
               </section>
 
               {/* 3. Legal Basis */}
-              <section className="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-slate-100" data-reveal>
+              <section className="bg-white p-6 md:p-12 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-6 mb-8">
                   <div className="p-4 bg-emerald-50 rounded-2xl text-emerald-600 shadow-sm">
                     <Scale className="h-8 w-8" />
                   </div>
-                  <h2 className="text-3xl font-black text-slate-900 italic uppercase tracking-tight">3. Legal Basis</h2>
+                  <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase italic">3. Legal Basis</h3>
                 </div>
                 <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-6">
-                  <p className="font-bold text-lg">
-                    Data protection legislation mandates that the processing of personal data must be grounded on the legal principles outlined in the Digital Personal Data Policy 2023.
+                  <p className="font-normal text-sm italic">
+                    The processing of personal data must be based on the legal principles outlined in laws.
                   </p>
-                  <div className="grid md:grid-cols-3 gap-6">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                      <h4 className="font-black text-slate-900 uppercase italic text-sm mb-3">Legitimate Interest</h4>
-                      <p className="text-sm font-bold text-slate-500">Serves as a lawful justification for processing, evaluated against data privacy laws to ensure no unjustified risk.</p>
+                      <h4 className="font-black text-slate-900 uppercase italic text-sm mb-3">4. Legitimate Interest</h4>
+                      <p className="text-xs font-normal text-slate-500 italic">This constitutes a valid legal basis for data processing in situations where the individual is a client or their contact person.</p>
                     </div>
                     <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                      <h4 className="font-black text-slate-900 uppercase italic text-sm mb-3">Consent</h4>
-                      <p className="text-sm font-bold text-slate-500">Under specific circumstances, only your explicit prior approval allows personal data processing.</p>
-                    </div>
-                    <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                      <h4 className="font-black text-slate-900 uppercase italic text-sm mb-3">Legal Obligation</h4>
-                      <p className="text-sm font-bold text-slate-500">Compliance with governmental and regulatory requirements that mandate data processing.</p>
+                      <h4 className="font-black text-slate-900 uppercase italic text-sm mb-3">5. Consent</h4>
+                      <p className="text-xs font-normal text-slate-500 italic">Processing is predicated on the individual's specific consent, provided through electronic forms or other direct interactions.</p>
                     </div>
                   </div>
                 </div>
@@ -192,13 +203,55 @@ const DataProtection = () => {
                 </div>
               </section>
 
-              {/* 8. Your Rights */}
+              {/* 8. Entitlements */}
+              <section className="bg-white p-6 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] shadow-xl border border-slate-100" data-reveal>
+                <div className="flex items-center gap-6 mb-12">
+                  <div className="p-4 bg-blue-50 rounded-2xl text-blue-600 shadow-sm">
+                    <UserCheck className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase italic">8. Data Subjects' Entitlements</h3>
+                </div>
+                <div className="space-y-8">
+                  {[
+                    { 
+                      title: "Right to be informed", 
+                      desc: "The data subjects have a right to be informed about what personal data regarding them we process and receive a copy of the data in question." 
+                    },
+                    { 
+                      title: "Right to access", 
+                      desc: "Data subjects have the right to request access to their data, assess and verify that the data is treated according to law." 
+                    },
+                    { 
+                      title: "Right to rectification", 
+                      desc: "Data subjects have the right to request rectification or correction of their data, in which case we will complete inaccurate or incorrect data promptly." 
+                    },
+                    { 
+                      title: "Right to erasure", 
+                      desc: "The data subjects have the right to have all their personal data erased, that is, to be forgotten. This right may be limited by legal obligations." 
+                    }
+                  ].map((right, idx) => (
+                    <div key={idx} className="p-6 md:p-8 bg-slate-50/50 rounded-[1.5rem] md:rounded-[2.5rem] border border-slate-100 hover:bg-blue-600 hover:text-white transition-all group duration-500">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-white p-2 rounded-xl group-hover:bg-blue-500 text-blue-600 group-hover:text-white transition-colors">
+                          <CheckCircle2 className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-black mb-3 uppercase italic tracking-wider">{right.title}</h4>
+                          <p className="text-xs font-normal leading-relaxed opacity-60 group-hover:opacity-100">{right.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 9. Your Rights */}
               <section className="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-slate-100" data-reveal>
                 <div className="flex items-center gap-6 mb-8">
                   <div className="p-4 bg-orange-50 rounded-2xl text-orange-600 shadow-sm">
                     <UserCheck className="h-8 w-8" />
                   </div>
-                  <h2 className="text-3xl font-black text-slate-900 italic uppercase tracking-tight">8. Your Rights</h2>
+                  <h2 className="text-3xl font-black text-slate-900 italic uppercase tracking-tight">9. Your Rights</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[

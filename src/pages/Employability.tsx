@@ -36,7 +36,7 @@ const Employability = () => {
         title: t("emp_feat_5_title"),
         desc: t("emp_feat_5_desc"),
         icon: Rocket,
-        image: "/assets/img/features/banking.png"
+        image: "/assets/img/features/media_govt_schemes.png"
     }
   ];
 
@@ -55,10 +55,10 @@ const Employability = () => {
                     <Sparkles className="h-3.5 w-3.5" />
                     {t("employability_elite_training")}
                 </div>
-                <h2 className="text-xl md:text-3xl font-black tracking-tight text-slate-900 mb-4 italic uppercase leading-none">
+                <h2 className="text-lg md:text-3xl font-black tracking-tight text-slate-900 mb-4 italic uppercase leading-none">
                     {t("employability_powering")} <span className="text-blue-600">{t("employability_careers")}</span>
                 </h2>
-                <p className="text-slate-500 text-xs md:text-sm font-bold opacity-80 uppercase italic tracking-widest leading-relaxed max-w-2xl mx-auto">
+                <p className="text-slate-500 text-xs md:text-sm font-normal opacity-80 uppercase italic tracking-widest leading-relaxed max-w-2xl mx-auto">
                     {t("employability_module_eyebrow")}
                 </p>
             </div>
@@ -68,8 +68,8 @@ const Employability = () => {
                     <div key={i} className={`flex flex-col md:flex-row items-center gap-12 ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                         <div className="flex-1" data-reveal>
                             <div className="relative group">
-                                <div className="absolute -inset-4 bg-blue-600/5 rounded-[3rem] blur-2xl group-hover:bg-blue-600/10 transition-all duration-700" />
-                                <div className="relative z-10 overflow-hidden rounded-[2rem] shadow-xl border-4 border-white group-hover:border-blue-50 transition-all duration-700">
+                                <div className="absolute -inset-4 bg-blue-600/5 rounded-[1.5rem] md:rounded-[3rem] blur-2xl group-hover:bg-blue-600/10 transition-all duration-700" />
+                                <div className="relative z-10 overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-xl border-4 border-white group-hover:border-blue-50 transition-all duration-700">
                                     <img 
                                         src={f.image} 
                                         alt={f.title} 
@@ -88,10 +88,10 @@ const Employability = () => {
                                 <span className="h-1 w-8 bg-blue-600 rounded-full" />
                                 MODULE {i + 1}
                             </div>
-                             <h3 className="text-xl md:text-2xl font-black text-slate-900 uppercase italic tracking-tighter leading-tight">
+                             <h3 className="text-lg md:text-2xl font-black text-slate-900 uppercase italic tracking-tighter leading-tight">
                                 {f.title}
                             </h3>
-                            <p className="text-slate-600 text-[13px] md:text-sm font-bold leading-relaxed italic opacity-80">
+                            <p className="text-slate-600 text-[13px] md:text-sm font-normal leading-relaxed italic opacity-80">
                                 {f.desc}
                             </p>
                             <button className="flex items-center gap-3 group text-slate-900 font-black uppercase italic tracking-widest text-[10px] hover:text-blue-600 transition-colors">
@@ -104,21 +104,21 @@ const Employability = () => {
                     </div>
                 ))}
 
-                <div className="relative py-16 px-10 md:px-20 bg-slate-900 rounded-[3rem] overflow-hidden shadow-2xl" data-reveal>
+                <div className="relative py-12 px-6 md:py-16 md:px-20 bg-slate-900 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl" data-reveal>
                     <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
                     <div className="relative z-10 text-center">
                         <div className="h-16 w-16 bg-blue-600/20 backdrop-blur-2xl rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10 shadow-2xl">
                             <Database className="h-8 w-8 text-blue-400" />
                         </div>
-                        <h3 className="text-lg md:text-2xl font-black text-white mb-4 uppercase italic tracking-tighter leading-none">
+                        <h3 className="text-base md:text-2xl font-black text-white mb-4 uppercase italic tracking-tighter leading-none">
                             {t("employability_contact_title")}
                         </h3>
-                        <p className="text-white/50 text-[13px] md:text-sm font-bold italic tracking-wide leading-relaxed max-w-2xl mx-auto mb-8">
+                        <p className="text-white/50 text-[13px] md:text-sm font-normal italic tracking-wide leading-relaxed max-w-2xl mx-auto mb-8">
                             {t("employability_contact_desc")}
                         </p>
-                        <button className="group relative inline-flex items-center justify-center px-10 py-5 bg-blue-600 text-white font-black rounded-2xl hover:bg-white hover:text-blue-600 transition-all duration-500 text-lg shadow-2xl uppercase italic tracking-widest overflow-hidden">
+                        <button className="group relative inline-flex items-center justify-center px-6 py-4 md:px-10 md:py-5 bg-blue-600 text-white font-black rounded-2xl hover:bg-white hover:text-blue-600 transition-all duration-500 text-sm md:text-lg shadow-2xl uppercase italic tracking-widest overflow-hidden">
                             <span className="relative z-10 flex items-center gap-3">
-                                <Mail className="h-6 w-6 group-hover:animate-bounce" /> 
+                                <Mail className="h-4 w-4 md:h-6 md:w-6 group-hover:animate-bounce" /> 
                                 training@eduskill.org
                             </span>
                         </button>

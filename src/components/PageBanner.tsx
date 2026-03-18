@@ -48,7 +48,7 @@ const PageBanner = ({ title, subtitle, backgroundImage, breadcrumb }: PageBanner
   };
 
   return (
-    <div className="relative h-[260px] md:h-[350px] flex items-center overflow-hidden">
+    <div className="relative h-[200px] md:h-[350px] flex items-center overflow-hidden">
       {/* Dynamic Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -61,7 +61,7 @@ const PageBanner = ({ title, subtitle, backgroundImage, breadcrumb }: PageBanner
       </div>
 
       <div className="container mx-auto px-6 relative z-10 h-full flex flex-col justify-center items-center text-center">
-        <div className="max-w-4xl pt-10 flex flex-col items-center">
+        <div className="max-w-4xl pt-6 md:pt-10 flex flex-col items-center">
           {/* Breadcrumb */}
           <nav className="flex items-center justify-center gap-2 text-white/60 font-black text-[10px] uppercase tracking-[0.2em] mb-4">
             <Link to="/" className="hover:text-primary transition-colors">HOME</Link>
@@ -69,11 +69,11 @@ const PageBanner = ({ title, subtitle, backgroundImage, breadcrumb }: PageBanner
             <span className="text-white">{breadcrumb || title}</span>
           </nav>
 
-          <h1 className="text-4xl md:text-7xl font-black text-white mb-4 italic tracking-tighter uppercase leading-tight">
+          <h1 className="text-2xl md:text-7xl font-black text-white mb-4 italic tracking-tighter uppercase leading-tight">
             {renderTitle(title)}
           </h1>
           {subtitle && (
-            <p className="text-blue-100/80 text-lg md:text-xl font-bold italic tracking-wide max-w-2xl mx-auto">
+            <p className="text-blue-100/80 text-base md:text-xl font-bold italic tracking-wide max-w-2xl mx-auto">
               {subtitle}
             </p>
           )}
