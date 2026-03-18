@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { ArrowLeft, Phone, Mail, Lock, ArrowRight, UserCircle2, Shield, Building2, ChevronDown, GraduationCap } from "lucide-react";
+import { ArrowLeft, Phone, Mail, Lock, ArrowRight, UserCircle2, Shield, Building2, ChevronDown, GraduationCap, Eye, EyeOff } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/context/LanguageContext";
 import MainLayout from "@/components/MainLayout";
@@ -11,8 +11,8 @@ const Login = () => {
   const [searchParams] = useSearchParams();
   const initialRole = searchParams.get("role") || "student";
   
-  const [method, setMethod] = useState<"phone" | "email">("phone");
   const [role, setRole] = useState(initialRole);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     const r = searchParams.get("role");
@@ -51,7 +51,7 @@ const Login = () => {
                 {t("login_select_identity")}
               </label>
               <div className="relative group">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary z-10">
                   {role === 'admin' ? <Shield className="h-5 w-5" /> : 
                    role === 'associate' ? <Building2 className="h-5 w-5" /> :
                    role === 'govt' ? <Shield className="h-5 w-5 text-orange-500" /> :
@@ -61,7 +61,7 @@ const Login = () => {
                 <select
                   value={role}
                   onChange={(e) => setRole(e.target.value)}
-                  className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-3.5 pl-12 pr-4 text-slate-900 focus:outline-none focus:border-primary transition-all appearance-none font-bold italic text-sm shadow-inner"
+                  className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-3.5 pl-12 pr-4 text-slate-900 focus:outline-none focus:border-primary transition-all appearance-none font-bold italic text-sm shadow-inner relative z-0"
                 >
                   <option value="student">{t("nav_student_jobseeker")}</option>
                   <option value="admin">{t("nav_admin_login")}</option>
@@ -69,65 +69,64 @@ const Login = () => {
                   <option value="govt">{t("nav_govt_authority")}</option>
                   <option value="iti">{t("nav_iti_institution")}</option>
                 </select>
-                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none group-hover:text-primary transition-colors h-4 w-4" />
+                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none group-hover:text-primary transition-colors h-4 w-4 z-10" />
               </div>
             </div>
 
-            {/* Toggle */}
-            <div className="flex p-1.5 bg-slate-100/80 rounded-2xl mb-6 backdrop-blur-sm border border-slate-200/50">
-              <button 
-                className={`flex-1 py-2.5 text-[11px] font-black uppercase italic tracking-widest rounded-xl transition-all ${method === "phone" ? "bg-white text-primary shadow-md scale-[1.02]" : "text-slate-500 hover:text-slate-800"}`}
-                onClick={() => setMethod("phone")}
-              >
-                Phone / OTP
-              </button>
-              <button 
-                className={`flex-1 py-2.5 text-[11px] font-black uppercase italic tracking-widest rounded-xl transition-all ${method === "email" ? "bg-white text-primary shadow-md scale-[1.02]" : "text-slate-500 hover:text-slate-800"}`}
-                onClick={() => setMethod("email")}
-              >
-                Email & Password
-              </button>
-            </div>
-
             <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-              {method === "phone" ? (
+              <div className="space-y-1">
+                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest italic ml-1">{t("login_email")}</label>
                 <div className="relative">
-                  <Phone className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
+                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
                   <input 
-                    type="tel" 
-                    placeholder="Enter 10-digit mobile number" 
-                    className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-3.5 pl-12 pr-4 text-sm font-bold focus:outline-none focus:border-primary transition-all"
+                    type="email" 
+                    placeholder={t("login_email_placeholder")} 
+                    className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-3.5 pl-12 pr-4 text-sm font-bold focus:outline-none focus:border-primary transition-all shadow-inner"
                     required 
                   />
                 </div>
-              ) : (
-                <>
-                  <div className="relative">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
-                    <input 
-                      type="email" 
-                      placeholder="Email address" 
-                      className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-3.5 pl-12 pr-4 text-sm font-bold focus:outline-none focus:border-primary transition-all"
-                      required 
-                    />
-                  </div>
-                  <div className="relative">
-                    <Lock className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
-                    <input 
-                      type="password" 
-                      placeholder="Password" 
-                      className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-3.5 pl-12 pr-4 text-sm font-bold focus:outline-none focus:border-primary transition-all"
-                      required 
-                    />
-                  </div>
-                  <div className="flex justify-end">
-                    <a href="#" className="text-[10px] font-black uppercase italic tracking-widest text-primary hover:underline">Forgot password?</a>
-                  </div>
-                </>
-              )}
+              </div>
+
+              <div className="space-y-1">
+                <div className="flex justify-between items-center ml-1">
+                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest italic">{t("login_password")}</label>
+                  <Link to="/forgot-password" title="Forgot Password" className="text-[10px] font-black uppercase italic tracking-widest text-primary hover:underline">
+                    {t("login_forgot_password")}
+                  </Link>
+                </div>
+                <div className="relative group">
+                  <Lock className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
+                  <input 
+                    type={showPassword ? "text" : "password"} 
+                    placeholder={t("login_password_placeholder")} 
+                    className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-3.5 pl-12 pr-12 text-sm font-bold focus:outline-none focus:border-primary transition-all shadow-inner"
+                    required 
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors"
+                  >
+                    {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                  </button>
+                </div>
+              </div>
+
+              {/* Google reCAPTCHA */}
+              <div className="flex flex-col items-center justify-center py-2">
+                <div 
+                  className="g-recaptcha" 
+                  data-sitekey="6Le7KkssAAAAAIAG8sUMju9ACTkSEKcxmEriliUr"
+                  data-size="normal"
+                ></div>
+                <div className="mt-2 flex items-center gap-2 text-[10px] font-bold text-green-600 animate-pulse">
+                  <Shield className="h-3 w-3" />
+                  <span className="uppercase tracking-widest italic">System Secured: Auto-Verification Active</span>
+                </div>
+              </div>
 
               <button type="submit" className="w-full bg-blue-premium hover:bg-blue-600 text-white py-4 rounded-2xl text-[11px] font-black uppercase italic tracking-widest transition-all shadow-xl flex items-center justify-center gap-2 group">
-                {method === "phone" ? "Send OTP" : "Login Securely"}
+                {t("login_sign_in")}
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </form>
@@ -150,12 +149,16 @@ const Login = () => {
             </div>
           </div>
 
-          <p className="text-center text-sm text-slate-600 font-bold drop-shadow-sm pb-10">
-            Don't have an account?{" "}
-            <Link to="/register" className="font-black text-primary hover:underline italic uppercase tracking-wider">
-              Register Free
-            </Link>
-          </p>
+          <div className="text-center pb-10">
+             <p className="text-[11px] font-bold text-slate-500 uppercase tracking-widest italic mb-3 opacity-60">New to NearbyHiring?</p>
+             <Link 
+               to="/register" 
+               className="inline-flex items-center gap-2 bg-white border-2 border-slate-100 px-8 py-3 rounded-2xl text-[11px] font-black uppercase italic tracking-widest text-primary shadow-sm hover:shadow-md hover:border-primary/20 transition-all hover:scale-[1.02]"
+             >
+               {t("login_create_account")}
+               <UserCircle2 className="h-4 w-4" />
+             </Link>
+          </div>
         </div>
       </div>
     </MainLayout>

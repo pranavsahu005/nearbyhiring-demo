@@ -1,5 +1,6 @@
-import { Mail, Phone, MessageCircle, Clock, ChevronDown, HelpCircle, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MessageCircle, Clock, ChevronDown, HelpCircle, MapPin, Send, Shield } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
 import MainLayout from "@/components/MainLayout";
 import PageBanner from "@/components/PageBanner";
@@ -140,46 +141,107 @@ const Support = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white rounded-[4rem] p-8 md:p-16 border border-slate-100 shadow-2xl shadow-blue-100/30" data-reveal>
-            <h3 className="text-3xl font-black text-slate-900 mb-10 uppercase italic tracking-tighter flex items-center gap-4">
-              <span className="h-10 w-2 bg-blue-600 rounded-full" />
-              Send Us a Message
-            </h3>
-            <form className="grid md:grid-cols-2 gap-8">
-              {[
-                { label: "Your Name", placeholder: "Rahul Sharma", type: "text" },
-                { label: "Email Address", placeholder: "rahul@example.com", type: "email" },
-                { label: "Phone Number", placeholder: "+91 9312189789", type: "tel" },
-                { label: "Subject", placeholder: "e.g. Job not showing", type: "text" },
-              ].map((field) => (
-                <div key={field.label} className="space-y-3">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-500">{field.label}</label>
+          {/* Help Desk Form */}
+          <div className="bg-white rounded-[3rem] overflow-hidden border border-slate-100 shadow-2xl shadow-blue-100/30" data-reveal>
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-8 md:p-12 text-white">
+              <h3 className="text-3xl font-black uppercase italic tracking-tighter mb-2">
+                Help Desk
+              </h3>
+              <p className="text-blue-100 font-bold italic">
+                Our team usually responds within 2-4 hours. Please provide as much detail as possible.
+              </p>
+            </div>
+            
+            <div className="p-8 md:p-12">
+              <form className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500">Your Full Name</label>
                   <input
-                    type={field.type}
-                    placeholder={field.placeholder}
-                    className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl font-bold text-slate-900 focus:ring-4 focus:ring-blue-100 transition-all outline-none"
+                    type="text"
+                    placeholder="e.g. Rahul Sharma"
+                    className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-slate-900 focus:ring-4 focus:ring-blue-100 focus:border-blue-400 transition-all outline-none"
+                    required
                   />
                 </div>
-              ))}
-              <div className="md:col-span-2 space-y-3">
-                <label className="text-xs font-black uppercase tracking-widest text-slate-500">Your Message</label>
-                <textarea
-                  rows={4}
-                  placeholder="Describe your issue or query..."
-                  className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl font-bold text-slate-900 focus:ring-4 focus:ring-blue-100 transition-all outline-none resize-none"
-                />
-              </div>
-              <div className="md:col-span-2">
-                <button
-                  type="submit"
-                  className="w-full md:w-auto flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-black px-12 py-5 rounded-2xl uppercase italic tracking-wider transition-all hover:scale-105 shadow-xl shadow-blue-200"
-                >
-                  Send Message
-                  <Send className="h-5 w-5" />
-                </button>
-              </div>
-            </form>
+                <div className="space-y-3">
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500">Email Address</label>
+                  <input
+                    type="email"
+                    placeholder="rahul@example.com"
+                    className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-slate-900 focus:ring-4 focus:ring-blue-100 focus:border-blue-400 transition-all outline-none"
+                    required
+                  />
+                </div>
+                <div className="space-y-3">
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500">Mobile Number</label>
+                  <input
+                    type="tel"
+                    placeholder="+91 9312189789"
+                    className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-slate-900 focus:ring-4 focus:ring-blue-100 focus:border-blue-400 transition-all outline-none"
+                    required
+                  />
+                </div>
+                <div className="space-y-3">
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500">Subject / Category</label>
+                  <div className="relative">
+                    <select className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-slate-900 focus:ring-4 focus:ring-blue-100 focus:border-blue-400 transition-all outline-none appearance-none cursor-pointer">
+                      <option value="">Select a subject...</option>
+                      <option value="job">Job Search Assistance</option>
+                      <option value="registration">Registration Issues</option>
+                      <option value="employer">Employer Queries</option>
+                      <option value="technical">Technical Support</option>
+                      <option value="feedback">Feedback & Suggestions</option>
+                    </select>
+                    <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400 pointer-events-none" />
+                  </div>
+                </div>
+                <div className="md:col-span-2 space-y-3">
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500">Special Note / Description</label>
+                  <textarea
+                    rows={5}
+                    placeholder="Tell us more about your inquiry..."
+                    className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-slate-900 focus:ring-4 focus:ring-blue-100 focus:border-blue-400 transition-all outline-none resize-none"
+                    required
+                  />
+                </div>
+
+                {/* Google reCAPTCHA */}
+                <div className="md:col-span-2 flex flex-col items-center justify-center py-4 border-y border-slate-50 my-4">
+                  <div 
+                    className="g-recaptcha" 
+                    data-sitekey="6Le7KkssAAAAAIAG8sUMju9ACTkSEKcxmEriliUr"
+                    data-size="normal"
+                  ></div>
+                  <div className="mt-3 flex items-center gap-2 text-[10px] font-black text-blue-600 animate-pulse uppercase tracking-widest italic">
+                    <Shield className="h-3 w-3" />
+                    Verified Help Desk Security Active
+                  </div>
+                </div>
+
+                {/* Privacy Checkbox */}
+                <div className="md:col-span-2 flex items-start gap-3">
+                  <input 
+                    type="checkbox" 
+                    id="privacy" 
+                    className="mt-1 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer" 
+                    required
+                  />
+                  <label htmlFor="privacy" className="text-sm font-bold text-slate-500 cursor-pointer leading-tight">
+                    I have read and agree to the <Link to="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link> and <Link to="/terms" className="text-blue-600 hover:underline">Terms of Service</Link>.
+                  </label>
+                </div>
+
+                <div className="md:col-span-2">
+                  <button
+                    type="submit"
+                    className="w-full md:w-auto flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-black px-12 py-5 rounded-2xl uppercase italic tracking-wider transition-all hover:scale-105 shadow-xl shadow-blue-200 group"
+                  >
+                    Submit Support Request
+                    <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
 
           {/* Office */}

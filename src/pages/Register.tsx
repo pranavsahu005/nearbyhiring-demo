@@ -12,7 +12,12 @@ import {
   ChevronRight,
   Mail,
   Building2,
-  Sparkles
+  Sparkles,
+  Lock,
+  Eye,
+  EyeOff,
+  ArrowRight,
+  Shield
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
@@ -22,8 +27,9 @@ import { cn } from "@/lib/utils";
 
 const steps = [
   { id: 1, name: "reg_step_personal", icon: <User className="h-5 w-5" /> },
-  { id: 2, name: "reg_step_professional", icon: <GraduationCap className="h-5 w-5" /> },
-  { id: 3, name: "reg_step_preferences", icon: <Briefcase className="h-5 w-5" /> }
+  { id: 2, name: "reg_step_otp", icon: <Shield className="h-5 w-5" /> },
+  { id: 3, name: "reg_step_professional", icon: <GraduationCap className="h-5 w-5" /> },
+  { id: 4, name: "reg_step_preferences", icon: <Briefcase className="h-5 w-5" /> }
 ];
 
 const Register = () => {
@@ -31,10 +37,11 @@ const Register = () => {
   const { t } = useLanguage();
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(0);
+  const [showPassword, setShowPassword] = useState(false);
 
   const next = () => {
     setDirection(1);
-    setStep(p => Math.min(p + 1, 3));
+    setStep(p => Math.min(p + 1, 4));
   };
   const prev = () => {
     setDirection(-1);
@@ -91,24 +98,33 @@ const Register = () => {
               <div className="absolute top-1/2 left-0 w-full h-0.5 bg-slate-100 -translate-y-1/2" />
               <div 
                 className="absolute top-1/2 left-0 h-0.5 bg-blue-600 -translate-y-1/2 transition-all duration-700 ease-in-out" 
-                style={{ width: `${((step - 1) / 2) * 100}%` }}
+                style={{ width: `${((step - 1) / 3) * 100}%` }}
               />
               <div className="flex justify-between relative z-10">
-                {steps.map((s) => (
+                {steps.map((s) => (s.id < step ? (
                   <div key={s.id} className="flex flex-col items-center group">
                     <button
-                      onClick={() => s.id < step && setStep(s.id)}
+                      onClick={() => setStep(s.id)}
+                      className="h-14 w-14 rounded-2xl flex items-center justify-center transition-all duration-500 border-4 bg-white text-blue-600 border-blue-50 cursor-pointer"
+                    >
+                      <Check className="h-6 w-6" />
+                    </button>
+                    <span className="mt-4 text-[10px] font-black uppercase tracking-[0.2em] italic transition-colors duration-500 text-slate-400">
+                      {t(s.name)}
+                    </span>
+                  </div>
+                ) : (
+                  <div key={s.id} className="flex flex-col items-center group">
+                    <div
                       className={cn(
                         "h-14 w-14 rounded-2xl flex items-center justify-center transition-all duration-500 border-4",
                         step === s.id 
                           ? "bg-blue-600 text-white border-blue-50 shadow-xl shadow-blue-200 scale-110" 
-                          : step > s.id 
-                            ? "bg-white text-blue-600 border-blue-50 cursor-pointer" 
-                            : "bg-white text-slate-300 border-slate-50"
+                          : "bg-white text-slate-300 border-slate-50"
                       )}
                     >
-                      {step > s.id ? <Check className="h-6 w-6" /> : s.icon}
-                    </button>
+                      {s.icon}
+                    </div>
                     <span className={cn(
                       "mt-4 text-[10px] font-black uppercase tracking-[0.2em] italic transition-colors duration-500",
                       step === s.id ? "text-blue-600" : "text-slate-400"
@@ -116,7 +132,7 @@ const Register = () => {
                       {t(s.name)}
                     </span>
                   </div>
-                ))}
+                )))}
               </div>
             </div>
 
@@ -136,7 +152,7 @@ const Register = () => {
                   }}
                   onSubmit={(e) => { 
                     e.preventDefault(); 
-                    if (step === 3) window.location.href = '/jobs'; 
+                    if (step === 4) window.location.href = '/jobs'; 
                     else next(); 
                   }}
                   className="space-y-8"
@@ -166,11 +182,79 @@ const Register = () => {
                             <input type="email" placeholder="email@example.com" className="w-full pl-16 pr-8 py-5 bg-slate-50/50 border-none rounded-2xl focus:ring-4 focus:ring-blue-100 transition-all font-bold placeholder:text-slate-300" required />
                           </div>
                         </div>
+                        <div className="md:col-span-2 space-y-2">
+                          <label className="text-[10px] uppercase font-black tracking-widest text-slate-400 ml-4 italic">{t("login_password")}</label>
+                          <div className="relative group">
+                            <Lock className="absolute left-6 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-300 group-focus-within:text-blue-600 transition-colors" />
+                            <input 
+                              type={showPassword ? "text" : "password"} 
+                              placeholder={t("login_password_placeholder")} 
+                              className="w-full pl-16 pr-16 py-5 bg-slate-50/50 border-none rounded-2xl focus:ring-4 focus:ring-blue-100 transition-all font-bold placeholder:text-slate-300" 
+                              required 
+                            />
+                            <button
+                              type="button"
+                              onClick={() => setShowPassword(!showPassword)}
+                              className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-300 hover:text-blue-600 transition-colors"
+                            >
+                              {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Google reCAPTCHA */}
+                      <div className="flex flex-col items-center justify-center py-4 border-y border-slate-50 my-2">
+                        <div 
+                          className="g-recaptcha" 
+                          data-sitekey="6Le7KkssAAAAAIAG8sUMju9ACTkSEKcxmEriliUr"
+                          data-size="normal"
+                        ></div>
+                        <div className="mt-3 flex items-center gap-2 text-[10px] font-black text-blue-600 animate-pulse uppercase tracking-widest italic">
+                          <Shield className="h-3 w-3" />
+                          Registration Security Active
+                        </div>
                       </div>
                     </div>
                   )}
 
                   {step === 2 && (
+                    <div className="space-y-6">
+                      <div className="text-center mb-8">
+                        <h3 className="text-2xl font-black text-slate-900 uppercase italic mb-2">Verify Mobile</h3>
+                        <p className="text-sm font-bold text-slate-500 italic">We've sent a 6-digit code to your mobile number</p>
+                      </div>
+                      
+                      <div className="flex justify-center gap-3">
+                        {[1, 2, 3, 4, 5, 6].map((i) => (
+                          <input
+                            key={i}
+                            type="text"
+                            maxLength={1}
+                            className="h-14 w-12 text-center text-xl font-black rounded-2xl bg-slate-50 border-2 border-slate-100 focus:border-blue-600 focus:ring-4 focus:ring-blue-100 transition-all outline-none"
+                            placeholder="•"
+                          />
+                        ))}
+                      </div>
+
+                      <div className="text-center mt-8">
+                        <button type="button" className="text-xs font-black text-blue-600 uppercase italic tracking-widest hover:underline">
+                          Resend Code in 45s
+                        </button>
+                      </div>
+
+                      <div className="p-6 bg-blue-50/50 rounded-2xl flex items-center gap-4">
+                        <div className="h-10 w-10 bg-white text-blue-600 rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                           <Shield className="h-5 w-5" />
+                        </div>
+                        <p className="text-[10px] font-black text-slate-400 leading-tight uppercase italic">
+                          Safe & Secure: Your mobile number is used for authentication and job notifications only.
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {step === 3 && (
                     <div className="space-y-6">
                       <h3 className="text-2xl font-black text-slate-900 uppercase italic mb-8">{t("reg_pro_title")}</h3>
                       <div className="space-y-4">
@@ -197,7 +281,7 @@ const Register = () => {
                     </div>
                   )}
 
-                  {step === 3 && (
+                  {step === 4 && (
                     <div className="space-y-6">
                       <h3 className="text-2xl font-black text-slate-900 uppercase italic mb-8">{t("reg_pref_title")}</h3>
                       <div className="grid md:grid-cols-2 gap-6">
@@ -243,7 +327,7 @@ const Register = () => {
                       </button>
                     )}
                     <button type="submit" className="flex-1 py-5 bg-blue-premium text-white rounded-3xl font-black uppercase italic tracking-widest text-lg md:text-xl shadow-2xl shadow-blue-100 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3">
-                      {step === 3 ? t("reg_complete") : t("reg_next_step")}
+                      {step === 4 ? t("reg_complete") : t("reg_next_step")}
                       <ChevronRight className="h-6 w-6" />
                     </button>
                   </div>
@@ -251,9 +335,13 @@ const Register = () => {
               </AnimatePresence>
             </div>
 
-            <p className="text-center mt-12 text-slate-400 font-bold uppercase tracking-widest text-xs">
-              Already a member? <Link to="/login" className="text-blue-600 hover:underline underline-offset-8">Login here</Link>
-            </p>
+            <div className="text-center mt-12 mb-8">
+              <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest italic mb-4 opacity-60">Already a member?</p>
+              <Link to="/login" className="inline-flex items-center gap-2 bg-white border-2 border-slate-100 px-8 py-3 rounded-2xl text-[11px] font-black uppercase italic tracking-widest text-blue-600 shadow-sm hover:shadow-md hover:border-blue-600/20 transition-all hover:scale-[1.02]">
+                Login here
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
 
           </div>
         </div>

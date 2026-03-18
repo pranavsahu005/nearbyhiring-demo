@@ -1,4 +1,4 @@
-﻿
+
 import React from "react";
 import { Play, Image as ImageIcon, Newspaper, Mic2, ArrowRight, Share2, Download, ExternalLink, PlayCircle } from "lucide-react";
 import MainLayout from "@/components/MainLayout";
@@ -135,4 +135,3 @@ const Media = () => {
 };
 
 export default Media;
-

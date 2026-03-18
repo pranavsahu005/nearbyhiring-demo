@@ -110,7 +110,7 @@ const testimonials = [
     initials: "RC",
     rating: 5,
     tag: "🌍 Global",
-    quote: "Partnering with ITI-Eduskill gave us access to India's best technical talent. A platform I trust for all our Asia-Pacific hiring needs.",
+    quote: "Partnering with Nearby Hiring gave us access to India's best technical talent. A platform I trust for all our Asia-Pacific hiring needs.",
   },
 ];
 

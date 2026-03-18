@@ -6,9 +6,10 @@ import {
   Shield, FileText, Info, 
   Mic2, Wrench, Send, Layout,
   Crown, GraduationCap, Building2, UserCircle2, Settings,
-  ArrowRight
+  ArrowRight, HelpCircle, Star, MessageSquare, LogIn
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { cn } from "@/lib/utils";
 
 const megaMenuItems = {
   about: {
@@ -140,19 +141,17 @@ const Header = () => {
     }
   }, [menuOpen]);
 
-  // Standardize glass effect to only trigger on scroll for all pages
-  const showGlass = scrolled;
+  const showGlass = scrolled || menuOpen;
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-        showGlass ? "bg-white/95 backdrop-blur-md shadow-sm py-2" : "bg-transparent py-4"
+      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 bg-white shadow-sm py-2 ${
+        showGlass ? "lg:bg-white lg:shadow-sm lg:py-2" : "lg:bg-transparent lg:shadow-none lg:py-4"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo Section */}
-          <Link to="/" className="flex items-center gap-2 group z-[101]">
+          <Link to="/" className="flex items-center gap-2 group z-[1001]">
             <div className="relative overflow-hidden h-9 w-9 rounded-lg">
               <img
                 src="/assets/img/logo.webp"
@@ -162,14 +161,13 @@ const Header = () => {
               />
             </div>
             <span
-              className={`text-xl font-black tracking-tight ${showGlass ? "text-slate-900" : "text-white"}`}
+              className={`text-xl font-black tracking-tight text-slate-900 ${showGlass ? "lg:text-slate-900" : "lg:text-white"}`}
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              Nearby<span className={showGlass ? "text-primary" : "text-primary"}>Hiring</span>
+              Nearby<span className="text-primary">Hiring</span>
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             <NavLink
               to="/"
@@ -205,13 +203,11 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Crossover-Style Mega Menus (Dark Theme, Compact, Stable) */}
           <div 
             className={`fixed top-[72px] left-0 right-0 z-[101] transition-all duration-700 ease-out-expo pointer-events-none ${
               activeMega ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
             }`}
           >
-            {/* Dark Backdrop */}
             <div 
               className={`fixed inset-0 bg-black/40 backdrop-blur-sm -z-10 transition-opacity duration-700 pointer-events-auto ${activeMega ? "opacity-100" : "opacity-0 invisible"}`} 
               onMouseEnter={() => setActiveMega(null)}
@@ -228,7 +224,6 @@ const Header = () => {
                       activeMega === key ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-[0.99] translate-y-1 pointer-events-none"
                     }`}
                   >
-                    {/* Left: Compact Nav links */}
                     <div className="flex-1 p-10 grid grid-cols-2 gap-x-12 gap-y-8 bg-gradient-to-br from-white/[0.02] to-transparent">
                       {section.sections.map((subSection) => (
                         <div key={subSection.title} className="space-y-5">
@@ -262,7 +257,6 @@ const Header = () => {
                       ))}
                     </div>
 
-                    {/* Right: Featured Section (Dark & Premium) */}
                     <div className="w-[340px] relative flex flex-col justify-end p-10 overflow-hidden group/feat border-l border-white/10">
                       <div className="absolute inset-0 z-0">
                         <img 
@@ -303,7 +297,6 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Desktop Utilities */}
           <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={() => setLanguage(language === "en" ? "hi" : "en")}
@@ -355,21 +348,16 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Mobile Right Controls */}
-          <div className="flex lg:hidden items-center gap-2 z-[101]">
+          <div className="flex lg:hidden items-center gap-2 z-[1001]">
             <button
               onClick={() => setLanguage(language === "en" ? "hi" : "en")}
-              className={`p-2.5 rounded-xl border transition-all ${
-                showGlass ? "border-slate-200 bg-white shadow-sm" : "border-white/20 bg-white/10 text-white"
-              }`}
+              className="p-2.5 rounded-xl border border-slate-200 bg-white shadow-sm transition-all"
             >
               <img src="/assets/img/translator.png" alt="Translate" className="h-6 w-6 object-contain" />
             </button>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className={`p-2.5 rounded-xl transition-all ${
-                showGlass ? "bg-slate-900 text-white" : "bg-white/10 text-white"
-              }`}
+              className="p-2.5 rounded-xl bg-slate-900 text-white transition-all"
             >
               {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -377,96 +365,156 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation Overlay */}
       <div className={`fixed inset-0 z-[100] lg:hidden transition-all duration-500 ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}>
-        <div className="absolute inset-0 bg-slate-950/20 backdrop-blur-sm" onClick={() => setMenuOpen(false)} />
+        <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm" onClick={() => setMenuOpen(false)} />
         <div className={`absolute top-0 right-0 w-[85%] h-full bg-white shadow-2xl transition-transform duration-500 flex flex-col ${menuOpen ? "translate-x-0" : "translate-x-full"}`}>
-          <div className="p-6 pt-24 flex-1 overflow-y-auto custom-scrollbar">
-            <div className="space-y-6">
-              <NavLink 
-                to="/" 
-                end 
-                onClick={() => setMenuOpen(false)}
-                className={({ isActive }) => `block text-base font-black p-4 rounded-xl transition-all ${isActive ? "bg-primary/5 text-primary" : "text-slate-800 active:bg-slate-50"}`}
-              >
-                {t("nav_home")}
-              </NavLink>
-
-              <div className="space-y-2">
-                <p className="px-4 text-[10px] font-black uppercase tracking-widest text-slate-400">Categories</p>
-                {Object.entries(megaMenuItems).map(([key, section]) => (
-                  <div key={key} className="border-b border-slate-50 last:border-0 overflow-hidden">
-                    <button 
-                      onClick={() => setMobileSubmenu(mobileSubmenu === key ? null : key)}
-                      className="flex items-center justify-between w-full p-4 rounded-xl active:bg-slate-50 transition-all"
-                    >
-                      <span className={`font-black ${mobileSubmenu === key ? "text-primary" : "text-slate-800"}`}>{t(section.label)}</span>
-                      <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${mobileSubmenu === key ? "rotate-180" : ""}`} />
-                    </button>
-                    <div className={`grid transition-all duration-300 ${mobileSubmenu === key ? "grid-rows-[1fr] opacity-100 pb-4" : "grid-rows-[0fr] opacity-0"}`}>
-                      <div className="overflow-hidden space-y-4 px-4 pt-2">
-                        {section.sections.map((subSection) => (
-                          <div key={subSection.title} className="space-y-2">
-                            <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">
-                              {subSection.title}
-                            </p>
-                            <div className="space-y-1">
-                              {subSection.items.map((item) => (
-                                <Link 
-                                  key={item.label} 
-                                  to={item.to} 
-                                  onClick={() => setMenuOpen(false)}
-                                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 text-slate-600"
-                                >
-                                  <item.icon className="h-4 w-4 text-slate-400" />
-                                  <span className="text-sm font-bold">{t(item.label)}</span>
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="space-y-2">
-                <p className="px-4 text-[10px] font-black uppercase tracking-widest text-slate-400">Account Access</p>
-                <div className="grid grid-cols-1 gap-2 p-2">
-                  {loginRoles.map((role) => (
-                    <Link 
-                      key={role.label} 
-                      to={role.to} 
-                      onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-4 p-4 rounded-2xl border border-slate-100 bg-slate-50 active:scale-95 transition-all"
-                    >
-                      <div className="p-2.5 rounded-xl bg-white shadow-sm">
-                        <role.icon className={`h-5 w-5 ${role.color}`} />
-                      </div>
-                      <span className="text-sm font-bold text-slate-800">{t(role.label)}</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-6 bg-slate-50 border-t border-slate-100 space-y-4">
+          <div className="p-6 pt-20 border-b border-slate-100 space-y-3">
             <Link 
               to="/register" 
               onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-center w-full py-4 rounded-2xl bg-primary text-white font-black shadow-lg"
+              className="flex items-center justify-center w-full py-4 rounded-xl bg-primary text-white font-black uppercase italic tracking-widest shadow-xl shadow-primary/20 active:scale-95 transition-all"
             >
-              {t("nav_register")}
+              Register Free
             </Link>
             <button 
               onClick={() => { setLanguage(language === "en" ? "hi" : "en"); setMenuOpen(false); }}
-              className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-white border border-slate-200 text-slate-800 font-black shadow-sm"
+              className="flex items-center justify-center gap-3 w-full py-4 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 font-black uppercase italic tracking-widest active:scale-95 transition-all shadow-sm"
             >
-              <img src="/assets/img/translator.png" alt="Translate" className="h-6 w-6 object-contain" />
+              <img src="/assets/img/translator.png" alt="Translate" className="h-5 w-5 object-contain" />
               Switch to {language === "en" ? "हिन्दी" : "English"}
             </button>
+          </div>
+
+          <div className="flex-1 overflow-y-auto custom-scrollbar p-6">
+            <div className="space-y-4">
+              {[
+                { label: "About", key: "about", icon: Info },
+                { label: "For Jobseekers", key: "jobs", icon: Briefcase },
+                { label: "For Companies", key: "company", icon: Building2 },
+                { label: "Media", key: "media", icon: Newspaper },
+                { label: "Resources", key: "resources", icon: Layout },
+                { label: "Reviews", key: "reviews", to: "/faq", icon: Star },
+                { label: "Help", key: "help", to: "/support", icon: HelpCircle },
+                { label: "Login", key: "login", icon: LogIn }
+              ].map((item) => (
+                <div key={item.label} className="border-b border-slate-50 last:border-0">
+                  {item.to ? (
+                    <Link
+                      to={item.to}
+                      onClick={() => setMenuOpen(false)}
+                      className="flex items-center justify-between w-full py-4 text-base font-black text-slate-900 uppercase italic tracking-tight"
+                    >
+                      <div className="flex items-center gap-3">
+                        <item.icon className="h-4 w-4 text-blue-500" />
+                        <span>{item.label}</span>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-slate-300" />
+                    </Link>
+                  ) : (
+                    <>
+                      <button 
+                        onClick={() => setMobileSubmenu(mobileSubmenu === item.key ? null : item.key)}
+                        className="flex items-center justify-between w-full py-4 text-base font-black uppercase italic tracking-tight"
+                      >
+                        <div className="flex items-center gap-3">
+                          <item.icon className={cn("h-4 w-4", mobileSubmenu === item.key ? "text-primary" : "text-blue-500")} />
+                          <span className={mobileSubmenu === item.key ? "text-primary" : "text-slate-900"}>{item.label}</span>
+                        </div>
+                        <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${mobileSubmenu === item.key ? "rotate-180 text-primary" : "text-slate-300"}`} />
+                      </button>
+                      <div className={`grid transition-all duration-300 ${mobileSubmenu === item.key ? "grid-rows-[1fr] opacity-100 pb-4" : "grid-rows-[0fr] opacity-0"}`}>
+                        <div className="overflow-hidden space-y-3 pl-11">
+                          {item.key === 'about' && megaMenuItems.about.sections.flatMap(s => s.items).map(i => (
+                            <Link key={i.label} to={i.to} onClick={() => setMenuOpen(false)} className="block py-2 text-sm font-bold text-slate-500 hover:text-primary transition-colors uppercase italic tracking-wide">
+                              {t(i.label)}
+                            </Link>
+                          ))}
+                          {item.key === 'jobs' && megaMenuItems.jobs.sections.flatMap(s => s.items).map(i => (
+                            <Link key={i.label} to={i.to} onClick={() => setMenuOpen(false)} className="block py-2 text-sm font-bold text-slate-500 hover:text-primary transition-colors uppercase italic tracking-wide">
+                              {t(i.label)}
+                            </Link>
+                          ))}
+                          {item.key === 'media' && megaMenuItems.media.sections.flatMap(s => s.items).map(i => (
+                            <Link key={i.label} to={i.to} onClick={() => setMenuOpen(false)} className="block py-2 text-sm font-bold text-slate-500 hover:text-primary transition-colors uppercase italic tracking-wide">
+                              {t(i.label)}
+                            </Link>
+                          ))}
+                          {item.key === 'resources' && megaMenuItems.resources.sections.flatMap(s => s.items).map(i => (
+                            <Link key={i.label} to={i.to} onClick={() => setMenuOpen(false)} className="block py-2 text-sm font-bold text-slate-500 hover:text-primary transition-colors uppercase italic tracking-wide">
+                              {t(i.label)}
+                            </Link>
+                          ))}
+                          {item.key === 'company' && (
+                            <>
+                              <Link to="/partnership" onClick={() => setMenuOpen(false)} className="block py-2 text-sm font-bold text-slate-500 hover:text-primary transition-colors uppercase italic tracking-wide">
+                                Partners
+                              </Link>
+                              <Link to="/join-us" onClick={() => setMenuOpen(false)} className="block py-2 text-sm font-bold text-slate-500 hover:text-primary transition-colors uppercase italic tracking-wide">
+                                Careers
+                              </Link>
+                            </>
+                          )}
+                          {item.key === 'login' && (
+                            <>
+                              {loginRoles.map((role) => (
+                                <Link key={role.to} to={role.to} onClick={() => setMenuOpen(false)} className="flex items-center gap-3 py-2 text-sm font-bold text-slate-500 hover:text-primary transition-colors">
+                                  <div className={`p-1.5 rounded-lg ${role.bgColor} flex items-center justify-center`}>
+                                    <role.icon className="h-3.5 w-3.5 text-white" />
+                                  </div>
+                                  <span className="uppercase italic tracking-wide">{t(role.label)}</span>
+                                </Link>
+                              ))}
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 space-y-4">
+              <p className="px-1 text-[10px] font-black uppercase tracking-widest text-slate-400 italic">Quick Access</p>
+              <div className="grid grid-cols-3 gap-3">
+                <Link 
+                  to="/support" 
+                  onClick={() => setMenuOpen(false)}
+                  className="flex flex-col items-center gap-3 p-4 rounded-2xl border border-slate-100 bg-slate-50 active:scale-95 transition-all group"
+                >
+                  <div className="p-2.5 rounded-xl bg-white shadow-sm group-hover:scale-110 transition-transform text-emerald-500">
+                    <HelpCircle className="h-5 w-5" />
+                  </div>
+                  <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest text-center leading-tight group-hover:text-primary">
+                    Support
+                  </span>
+                </Link>
+                <Link 
+                  to="/faq" 
+                  onClick={() => setMenuOpen(false)}
+                  className="flex flex-col items-center gap-3 p-4 rounded-2xl border border-slate-100 bg-slate-50 active:scale-95 transition-all group"
+                >
+                  <div className="p-2.5 rounded-xl bg-white shadow-sm group-hover:scale-110 transition-transform text-amber-500">
+                    <MessageSquare className="h-5 w-5" />
+                  </div>
+                  <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest text-center leading-tight group-hover:text-primary">
+                    FAQ
+                  </span>
+                </Link>
+                <Link 
+                  to="/register" 
+                  onClick={() => setMenuOpen(false)}
+                  className="flex flex-col items-center gap-3 p-4 rounded-2xl border border-slate-100 bg-slate-50 active:scale-95 transition-all group"
+                >
+                  <div className="p-2.5 rounded-xl bg-white shadow-sm group-hover:scale-110 transition-transform text-blue-500">
+                    <Users className="h-5 w-5" />
+                  </div>
+                  <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest text-center leading-tight group-hover:text-primary">
+                    Register
+                  </span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

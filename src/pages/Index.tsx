@@ -12,6 +12,7 @@ import ChallengesSection from "@/components/sections/ChallengesSection";
 import LegacyAboutSection from "@/components/sections/LegacyAboutSection";
 import HighlightsSection from "@/components/sections/HighlightsSection";
 import CategoriesSection from "@/components/sections/CategoriesSection";
+import ServicesSection from "@/components/sections/ServicesSection";
 import ContactSection from "@/components/sections/ContactSection";
 import NewsletterSection from "@/components/sections/NewsletterSection";
 import useScrollReveal from "@/hooks/useScrollReveal";
@@ -32,6 +33,7 @@ const Index = () => {
       <LegacyAboutSection />
       <HighlightsSection />
       <CategoriesSection />
+      <ServicesSection />
       <ContactSection />
       <NewsletterSection />
     </MainLayout>

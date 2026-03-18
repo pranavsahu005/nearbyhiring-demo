@@ -53,7 +53,7 @@ const AiCoverLetter = () => {
 
             <div className="inline-flex items-center gap-2 text-slate-300 font-black uppercase text-xs italic tracking-widest">
                 <Sparkles className="h-4 w-4" />
-                POWERED BY EDUSKILL CORE AI
+                POWERED BY NEARBY HIRING CORE AI
             </div>
           </div>
         </div>
