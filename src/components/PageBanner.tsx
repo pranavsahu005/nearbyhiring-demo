@@ -69,7 +69,7 @@ const PageBanner = ({ title, subtitle, backgroundImage, breadcrumb }: PageBanner
             <span className="text-white">{breadcrumb || title}</span>
           </nav>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 italic tracking-tighter uppercase leading-tight px-4 leading-[1.1]">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 italic tracking-tighter uppercase px-4 leading-[1.1]">
             {renderTitle(title)}
           </h1>
           {subtitle && (

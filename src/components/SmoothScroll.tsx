@@ -6,12 +6,6 @@ interface SmoothScrollProps {
   children: React.ReactNode;
 }
 
-declare global {
-  interface Window {
-    lenis: Lenis | null;
-  }
-}
-
 const SmoothScroll = ({ children }: SmoothScrollProps) => {
   const lenisRef = useRef<Lenis | null>(null);
 
@@ -40,12 +34,14 @@ const SmoothScroll = ({ children }: SmoothScrollProps) => {
     requestAnimationFrame(raf);
 
     // Provide lenis instance to global window for potential external use or GSAP sync
-    window.lenis = lenis;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).lenis = lenis;
 
     return () => {
       lenis.destroy();
       lenisRef.current = null;
-      window.lenis = null;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).lenis = null;
     };
   }, []);
 

@@ -7,9 +7,10 @@ const ScrollToTop = () => {
   useLayoutEffect(() => {
     // With Lenis enabled, native `window.scrollTo` can be ignored; prefer Lenis when present.
     const target = hash ? hash : 0;
-    const lenis = window.lenis;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const lenis = (window as any).lenis;
     if (lenis) {
-      lenis.scrollTo(target as any, { immediate: true, force: true });
+      lenis.scrollTo(target as string | number, { immediate: true, force: true });
       return;
     }
 
